@@ -1,0 +1,224 @@
+<!-- 
+
+    Aula 02.003. Tpo Number
+
+1. Vamos falar agora sobre o tipo de dado number. Entao, vamos entrar 
+aqui no console do node para a gente brincar e fazermos alguns testes.
+
+2. Bom, no Javascript, todo numero eh do tipo number. Eh diferente do 
+Java, por exemplo, tem la varios, byte, int, float, double, cada um de
+um tamanho.
+
+3. No Javascript, nao. Eh sempre number. Mas, ai, o instrutor ja viu
+gente confundindo o seguinte, O Normandes, mas que tipo de 
+dado que eh esse, voce nao falou que a tipagem eh dinamica? 
+
+4. Bom, vamos separar uma coisa da outra. A tipagem dinamica significa
+que, uma variavel, ora ela pode ser do tipo number, ora ela pode ser do tipo
+string, ora boolean, ou outro tipo, e pode ser trocado dinamicamente
+esse tipo, mas semre existe um tipo de dado ali por tras. 
+
+5. Entao, se nos declararmos uma variavel aqui, por exemplo,
+
+var idade = 25;
+
+, essa variavel idade sera do tipo number. Como eh que nos sabemos
+que essa variavel eh do tipo number?  
+
+6. Nos podemos uar o operador typeof idade, que ele vai nos retornar qual
+que eh o tipo dessa variavel, tipo number.
+
+7. Se nos declararmos aqui, por exemplo,
+
+var preco = 14.99;
+
+, vamos ver qual eh o tipo da variavel preco? 
+
+typeof preco
+
+, que retorna number.
+
+8. Entao, tanto 14.99, que eh a variavel preco, quanto 25, que seria
+um inteiro, tambem eh do tipo number, entao, nao interfere, eh sempre
+number, e eh sempre 64 bits de ponto flutuante, o mesmo que o double do 
+Java, o mesmo tamanho la. E elas seguem o padrao IEEE 754, que tem aquele
+probleminha famoso de precisao, que eh o seguinte,
+
+9. Imaginemos que tenhamos uma variavel x = 0.3 - 0.2; Qual vai ser o 
+resultado?
+
+10. A gente esperaria que fosse 0.1, nao eh? Mas, se mandarmos imprimir o 
+x aqui no console do node, vejamos so qual que eh o valor dela?
+
+11. 0.09999999999999998
+
+12. Ou seja, eh uma aproximacao, entao, deve-se te cuidado ao fazer contas 
+de ponto flutuante om Javascript. Mesma coisa com o Java, se nos estivermos
+usando o Java, o double rimitivo tambem tem esse probleminha, porque
+usa o mesmo padrao paa representar um double.
+
+13. Como que nos poderiamos resolver isso daqui?
+
+14. Poderiamos faze o seguinte, se nos multiplicarmos por 10, por exemplo,
+esse numero menos 0.2 vezes 10 tambem e dividir, depois, todo mundo por
+10, nos nao alteramos o resultado. E, ai, o valor da variavel x, agora,
+fica 0.1,
+
+var x = (0.3 * 10 - 0.2 * 10) / 10;
+
+15. Entao, devemos ter cuidado, se formos fazer conta, alguma coisa
+assim com Javascript, devemos prestar bastante atencao, principalmente 
+quando for calculos com ponto flutuante.
+
+16. Como eh um tipo de dado, o number, existem varias funcoes nesse
+tipo de dado. 
+
+17. Como, por exemplo, nos podemos pegar ali, vamos criar uma variavel aqui,
+vamos colocar y = 10;
+
+y = 10;
+
+, ou seja, y tem o valor 10. y eh um number. typeof y retorna 'number'.
+
+18. Dentro desse tipo, existem varias funcoes que a gente pode usar 
+para brincar com essa variavel. Entao, nos podemos transformar, por
+exemplo, em uma string em binario,
+
+y.toString(2);
+
+, toString, passando 2, nos estamos falando que nos queremos que voce
+converta esse valor aqui que esta aqui em decimal paa binario, o numero 10
+em binarios, que resulta em 1010, entao, esse valor aqui, entao, daria
+aqui o valor, 10, em binario, eh so usar o toString, passando o 2.
+
+18. Se quisermos passar para hexadecimal, toString(16);, que retornou
+a. Entao, o a eh a representacao hexadecimal do decimal 10.
+
+19. Okay? Ah, Normandes, so tem esses metodos ai? Nao. Como eu fazo para
+descobrir? Pode, nos podemos olhar a documentacao, ou, aqui no console
+do node, nos damos o comando: nome da variavel e ponto e damos um <TAB>,
+que o console ja vai nos mostrar alguns todas as funcoes que tem para nos
+podermos brincar, que ja vem prontas no Javascript.
+
+20. Entao, tem todas essas aqui.
+
+21. Vamos colocar o comando preco.to e <TAB>., e aparecem todas as funcoes 
+que iniciam com o prefixo 'to'.
+
+22. Entao, preco.tofixed();, ele ja retorna 15, entao, ele arredondou
+o valor 14.99 para cima, ou seja, 15.
+
+23. E por ai vai, se nos quisermos usar exponencial, e, ai, nos podemos 
+ir brincando, nos podemos dar uma olhada na documentacao do javascript,
+dar uma pesquisada, se nos digitarmos Javascript toFixed no google,
+vai haver muita coisa.
+
+24. Entao, ai, da para nos brincarmos, da para nos nos aprofundarmos
+um pouquinho mais, se precisarmos dessas funcoes.
+
+25. E existem, tambem, tres casos especiais do tipo number, que eh o 
+infinito, o menos infinito, e o NaN, que eh o famoso Not a Number,
+
+26. Vamos ver, primeiro, o infinito e o menos infinito. Se nos estudarmos
+calculo na faculdade, se fizemos faculdade e chegamos a ver calculo,
+nos saberemos que um numero dividido por 0 vai para o infinito. A gente
+aprendeu ate o 3º colegial que nao tinha jeito de dividir um numero por zero,
+mas, depois que se aprende ali no Calculo, tem jeito de dividir sim um
+numero por zero. Entao, se nos pegarmos aqui uma variavel i e vamos 
+dividir aqui 10 por zero,
+
+var i = 10 / 0;
+
+27. Zero dividido por zero da +Infinito, ou seja, Infinity.
+
+28. E i, ou seja, typeof i, eh do tipo number. Entao, infinito eh do tipo
+number.
+
+29. Como eh que nos vamos para o menos infinito? Eh so fazer o contrario,
+ou seja, 
+
+var i = -10 / 0;
+
+, que resulta -Infinito.
+
+30. E typeof i resulta em number.
+
+31. Ah, Normandes, ai, eu posso fazer contas com uma variavel que eh do tipo
+Infinito? se nos fizermos i - 1, vai continuar sendo menos infinito, 
+-Infinity, nao vai fazer diferenca.
+
+32. Mas nao eh legal estar fazendo, se deu esse calculo de infinito,
+nos ja podemos, vamos supor que era para dividir por alguma coisa, e 
+nos encontramos, a pessoa, o usuario, informou zero, entao, divisao por
+zero, e deu menos infinito ou mais infinito, nos ja conseguimos dar uma
+mensagem para o uuario, informando que nao eh possivel, ou que eh 
+possivel, ai depende da regra de negocio do nosso sistema.
+
+33. E NaN eh quando a gente faz uma expressao, a gente vai usar uma
+expressao para fazer alguma conta e isso foi, resultou em uma coisa
+que nao eh um numero.
+
+34. Por exemplo, se nos pegarmos aqui uma variavel z e vamos dividir 
+10 / 'AlgaWorks', 
+
+var z = 10 / 'AlgaWorks';
+
+, qual que eh o resultado disso aqui?
+
+35. Nao sabemos, nao temos nem ideia, vamos ver? 
+
+36. NaN. Nao tem jeito de dividir 10 por uma string. Entao, ele fala que
+a operacao que nos fizemos nao eh um numero. E NaN eh de que tipo? 
+
+37. Eh um number tambem. Entao, todos eles sao do tipo number. Entao,
+10 eh do tipo number, 4.2 eh do tipo number, -Infinity eh do tipo
+number, +Infinity eh do tipo number, e tambem NaN eh do tipo number.
+
+38. Mas olha so um segredinho. Nos vimos que z eh NaN, mas vamos pegar,
+aqui, uma variavel, vamos chama-la, aqui, de y, por exemplo. Se pegarmos,
+
+var y = 10 / '2';
+
+, ou seja, 10 dividido por uma string, mas uma string com valor 2, por
+exemplo, ele ja vai funcionar. porque, ai, o javascript fala, Deixa eu
+tentar converter essa string aqui para um numero. Consegui? Consegui. Opa,
+entao, da certo.
+
+39. Legal. Legal e confuso. Entao, nos dividirmos um numero uma string
+e termos um resultado valido, dividido por 2 deu cinco. No Java,
+isso nunca seria possivel, como que nos dividimos um integer por uma string?
+
+40. Nem compila, o codigo nem compila. Aqui, ainda, aqui da o resultado
+correto, entao, tem que tomar bastante cuidado, com isso. 
+
+41. Se nos quisermos validar se um numero eh um NaN, tambem, por exemplo,
+o z eh um NaN, nos podemos uar a funcao isNaN, passando o aqui, que
+retorna true ou false.
+
+42. Entao, nos poderiamos ter um if, if(isNaN(z)), e aplicar alguma regra,
+que vai dar certo tambem.
+
+43. Entao, existe essa funcao, a gente ainda vai falar mais sobre funcao,
+mas lembremos que nos podemos ter aqui a variavel resultado,
+
+var r = isNaN(z)
+
+, e nos vamos saber se eh true ou se eh falso.
+
+44. Se nos colocarmos isNaN(2), vemos que o resultado do r eh falso, 
+porque 2 isNaN? Nao, 2 eh um numero, entao, r passou a ser false.
+
+45. Entao, vamos nos acostumando com os tipos de dados no Javascript,
+nos acostumando com Infinity, se bem que Infinity e -Infinity eh bem
+dificil de acontecer, NaN eh um pouco mais comum acontecer.
+
+46. Fazer contas com decimal, valores que tem casas decimais em aplicacoes
+corporativas, principalmente se nos estivermos trabalhando com Javascript
+para a maninpulacao da tela, essas coisas, eh mais dificil acontecer,
+a nao ser que estejamos usando Javascript mais no servidor, ai, nos 
+precisamos ter mais cuidados, ja existem outros frameworks tambem que
+podem nos ajudar.
+
+47. Fim da Aula 02.003. Tpo Number.
+
+-->

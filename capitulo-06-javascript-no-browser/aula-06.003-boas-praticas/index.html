@@ -1,0 +1,123 @@
+<!-- 
+
+    Aula 06.003. Boas Praticas
+
+ 1. O instrutor gostaria so de destacar algumas boas praticas aqui para nos, para nos sempre tentarmos segui-las, para o codigo ficar mais bonito, mais organizado.
+
+ 2. A primeira coisa, o instrutor nao sabe se nos percebemos, mas por que que o instrutor declarou esse script aqui embaixo do arquivo html, logo antes de terminar o elemento body?
+
+ 3. Bom isso daqui,
+
+ <script src="total.js"></script>
+
+ , eh legal por que?
+
+ 4. Para o Browser, ele comeca a carregar de cima para baixo, ele vai carregando tudo isso daqui, vai carregando. E qual que eh a recomendacao?
+
+ 5. Eh, no topo, a gente carregar o estilo e, no final, a gente carregar o Javascript, por que? Porque, a medida que o Browser for carregando de cima para baixo, se ele ja carregar o estilo, quando ele estiver desenhando o painel, ele ja vai desenhar o painel com o estilo correto, okay? Ja vai ficando bonito. Mas essa pagina local, aqui, eh muito simples, mas uma pagina maior, mais complexa, que for demorar um pouquinho mais para carregar, eh interessante, porque nos ja vamos vendo a pagina bonita de primeira. Entao, a pagina vem carregando, vem ficando apresentavel, ja vai aparecendo o html aqui, tudo, e, depois, no final, que a gente adiciona o comportamento, a iteracao com aquele site, porque, enquanto o site esta carregando, quando a pagina esta carregando, nos nao precisamos do Javascript, nos precisamos dele no final, depois de estar tudo carregado.
+
+ 6. Por isso, o Javascript vem sempre no final. Nos vamos ver sempre, na maioria das vezes, o script sendo carregado no fim.
+
+ 7. Okay? Que mais?
+
+ 8. Aqui, no Javascript, devemos reparar que nos sempre usamos var para declarar as variaveis. Devemos sempre fazer isso, nunca devemos declarar variaveis globais, okay? A gente ainda vai ver mais sobre isso, sobre escopo global, por exemplo, do jeito que esta o codigo em total.js ainda nao esta legal, porque esta tudo solto aqui, essas variaveis aqui, valorElement, totalElement, apesar de estarem com var, ainda estao no escopo global, nao esta encapsulado dentro de uma funcao, nos vamos fazer isso.
+
+ 9. Mas, de qualquer forma, nos ja colocamos dentro de de var. As outras duas variaveis dentro da funcao 'keyup', principalmente 'total' e o 'valor', nos precisamos colocar, aqui, como var, mas nao eh que nos precisamos, mas eh melhor nos colocarmos, aqui, como var, porque elas, neste caso, elas serao variaveis locais dentro dessa funcao. Essa variavel total nao vai tornar-se uma variavel global, o que eh muito legal.
+ 
+ 10. Beleza? Entao, sempre var aqui. A nao ser que tenhamos um motivo muito forte de colocar como variavel global. Mas, a principio, sempre var aqui na frente da variavel local, okay?
+
+ 11. Devemos declarar todas as variaveis no topo. Entao, aqui, nos declaramos todas as variaveis no topo, por exemplo, comecou a funcao, declaramos todas as variaveis logo no inicio. Entao, devemos declarar todas elas no topo, vai ficar mais claro, o nosso codigo, e eh um local unico, 'Deixa eu ver quais sao as variaveis que essa funcao usa?', ai, eu ja venha aqui e ja consigo olhar elas aqui, no topo da funcao.
+
+ 12. Uma coisa interessante, inicializar as variaveis tambem. Nos nao deixamos aqui com nada, por exemplo,
+
+ var total;
+
+ , nos ja deixamos inicializado,
+
+ var total = 0;
+
+ 13. Aqui tambem, ja inicilizamos a variavel 
+
+ var valor = parseFloat(valorElement.value ? valorElement.value : 0);
+
+ 14. Eh uma boa ideia, tambem, nos ja inicializarmos para evitar erros tambem. Okay? E o instrutor nem falou, mase eh possivel, o instrutor ira mostrar isso no console do node, o instrutor nem falou, mas eh possivel a gente fazer isso aqui, vamos criar, aqui, uma variavel nome1, colocar, aqui, o 'Joao', por exemplo, e vamos criar a variavel com o nome2, tambem com 'Joao'. So que, ao inves de colocarmos com aspas, nos podemos fazer assim,
+
+ > var nome1 = 'Joao'
+ 
+ > var nome2 = new String('Joao');
+
+ 15. O instrutor ainda vai falar sobre o operador new mais para a frente, mas eh possivel nos fazermos isso daqui, criar a variavel nome2 assim.
+
+ 16. Ao verificarmos o valor de nome2,
+
+ > nome2
+
+ , aparece: [String: 'Joao']
+
+ 17. E, para nome1,
+
+ > nome1
+
+ , aparece: 'Joao'. 
+
+ 18. Nao devemos fazer isso daqui: new String('Joao');
+
+ 19. Por isso que o instrutor nem nos falou antes. Isso tem para todos os tipos tambem, para um Number tambem, nos poderiamos fazer algo assim, mas nao devemos fazer, nao devemos usar esse new para criar, devemos usar a declaracao literal. Por que?
+
+ 20. nome1 eh igual/igual/igual a nome2?,
+
+ > nome1 === nome2
+
+ 21. Se nos olharmos, elas sao a mesma string, mas isso daqui vai dar false. Por que? Porque, aqui, o typeof de nome1 eh uma string. E o typeof de nome2 eh um objeto. Entao, ele vai comparar os tipos e vai dar errado. Beleza?
+ 
+ 22. Entao, nao devemos usar esse new para as coisas, devemos usar a declaracao literal, como o instrutor ja nos mostrou ate agora, por exemplo,
+
+ var nome1 = 'Joao';
+ var total = 0;
+
+ , ou seja, em total, nos colocamos diretamente o 0 para atribuir, ao inves de dar new, em alguma outra coisa. Okay?
+
+ 23. E devemos usar, sempre, os 3 iguais, o muito igual, para nos compararmos. Vai ser melhor, porque nos vamos comparar realmente se os tipos sao iguais e, se os tipos sao iguais, nos vamos comparar se os valores tambem sao iguais. Okay?
+
+ 24. Era isso que o instrutor queria nos falar aqui das boas praticas, para lembrar aqui, neste programinha, que o instrutor fez, apesar de ainda nao estar encapsulado, ainda da para melhorarmos, mas ja deu para o instrutor destacar um pouquinho para nos sobre, principalmente aqui do Javascript, os programadores mais iniciantes colocam o script la em cima, nao eh legal. E, para esse programinha aqui, vai dar diferenca? 
+
+ 25. Nao, neste programinha minusculo, nao vai ter tanto problema, assim, okay?, mas, eh melhor nos deixarmos sempre no final, okay? Eh isso que o instrutor queria nos falar nesta aula.
+
+ 26. Fim da Aula 06.003. Boas Praticas.
+
+ -->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <title>Debug com Developer Tools</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <style>
+        body {
+            padding: 20px;
+        }
+    </style>
+    </head>
+    <body>
+        <div class="panel panel-default">
+            <div class="panel-heading">Cálculo valor total</div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="">Valor</label>
+                            <input type="text" class="form-control" id="valor">
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="">Valor total</label>
+                            <p class="form-control-static" id="total">0</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="total.js"></script>
+    </body>
+</html>

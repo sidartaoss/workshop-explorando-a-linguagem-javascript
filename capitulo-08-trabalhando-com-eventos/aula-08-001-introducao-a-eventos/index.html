@@ -1,0 +1,97 @@
+<!--
+
+    Aula 08.001. Introducao a Eventos
+
+ 1. Vamos falar, neste capitulo, sobre eventos, que eh algo muito importante dentro do Javascript, nos usamos bastante, o instrutor usa muito, eventos.
+
+ 2. Bom, o que sao eventos? Eh, basicamente, nos reagirmos a um estimulo. Como assim, nos reagirmos? O codigo Javascript vai reagir, a um estimulo, eh quando algo acontecer, nos teremos uma funcao para tratar esse 'algo aconteceu'.
+
+ 3. Okay? O codigo, dessa forma, nao fica sequencial, linha apos linha, nos temos um, vai ser disparado um evento , dependendo do que acontecer, e, ai, nos temos uma funcao Javascript que fala, 'Opa, vamos executar, porque isso aconteceu'.
+
+ 4. Okay?, e nao aquela, 'Executa essa linha e, depois, essa e essa e essa e por ai vai...'. Beleza? O codigo fica muito mais organizado, o codigo fica mais limpo, o instrutor gosta bastante, okay?
+
+ 5. Nos temos os eventos que o DOM dispara, inclusive, nos ja fizemos ate alguns testes com ele. Vamos dar uma lembrada aqui, lembra aqui que, quando nos estavamos fazendo debug com o developer tools, nos usamos, aqui, oh, naquele exemplo, o evento 'keyup', para saber qual a tecla que estava sendo pressionada, nao eh?, e, ai, a gente fazia algumas regras com valor e colocavamos no html em outra posicao, lembra disso?
+
+ 6. Entao, o keyup eh um evento que eh disparado pelo DOM, nao eh?, e nos reagimos a esse evento, aconteceu algo, ou seja, uma tecla foi pressionada, e liberada, o keyup, quando a gente tira o dedo do teclado, ai, essa funcao aqui,
+
+valorElement.addEventListener('keyup', 
+function(e) {
+    var total = 0;
+    var valor = parseFloat(valorElement.value ? valorElement.value : 0);
+
+    if (valor > 0 && valor < 10) {
+        total = valor + valor * 0.3 + 5;
+    } else if (valor >= 10 && valor < 50) {
+        total = valor + valor * 0.1 + 2;
+    } else {
+        total = valor;
+    }
+
+    totalElement.innerHTML = total;
+}
+); 
+
+ , ela eh executada. 
+
+ 7. Okay? Essa eh a ideia. Ta vendo que o codigo eh assim, oh, o instrutor colocou assim, oh, o codigo comecou sendo executado aqui nessa ordem,
+
+ console.log('Iniciando...');
+
+var valorElement = document.getElementById('valor');
+var totalElement = document.getElementById('total');
+
+ , chegou aqui,
+
+ valorElement.addEventListener('keyup', function(e) {
+     ...
+ });
+
+ , eu adicionei um evento, e isso aqui nao eh executado,
+
+    var total = 0;
+    var valor = parseFloat(valorElement.value ? valorElement.value : 0);
+
+    if (valor > 0 && valor < 10) {
+        total = valor + valor * 0.3 + 5;
+    } else if (valor >= 10 && valor < 50) {
+        total = valor + valor * 0.1 + 2;
+    } else {
+        total = valor;
+    }
+    totalElement.innerHTML = total;
+
+ , enquanto esse evento, 'keyup', nao ocorrer. 
+ 
+ 8. Essa forma aqui, addEventListener, foi usando Javascript puro. Mas, nos ja fizemos, inclusive com o jQuery, no exemplo de seletores, por exemplo, lembra, la, quando a gente estava fazendo o exemplo de multi-selecao de linhas, entao, nos tinhamos a selecaoUsuarios e a selecaoTodosUsuarios, nos fizemos, la, .on('click'),
+
+  $(function () {
+    var selecaoTodosUsuarios = $('#selecao-todos-usuarios');
+    var selecaoUsuarios = $('.js-selecao-usuario');
+    selecaoUsuarios.on('click', function() {
+        var totalUsuariosSelecionados = $('.js-selecao-usuario:checked').length;
+        var checked = selecaoUsuarios.length === totalUsuariosSelecionados;
+        selecaoTodosUsuarios.prop('checked', checked);
+    });
+    selecaoTodosUsuarios.on('click', function() {
+         selecaoUsuarios.prop('checked', selecaoTodosUsuarios.prop('checked'));
+    });    
+ });
+
+ , aqui, no caso, o clique, eh o evento do mouse, 'click' de clicar naquele campo, entao, quando eu cliquei la, on(), 'click', eh assim que o jQuery atribui uma funcao, ta vendo que a ideia eh a mesma, atribuiu uma funcao a algo que aconteceu, nesse caso, o 'click'.
+
+ 9. Tambem fizemos no exemplo do plugin do jQuery, na verdade, foi o mesmo exemplo la do Debug, so que, nesse caso, a gente transformou para o jQuery, nao eh?, colocou la, on(), 'keyup'.
+
+ 10. E eh isso daqui, esses sao os eventos do DOM, nao eh?, quando nos usamos, o DOM dispara o evento para a gente, no caso, ali, o on(), 'click', nao eh?, um 'keyup', a gente clicou na tela e soltou, nao eh?, sao eventos do DOM, entao, eventos de tecla, tem o 'keyup' e o 'keydown'. O 'keydown' eh quando voce pressiona, ai, lanca o 'keydown', quando voce tira, o 'keyup'. Tem eventos de mouse, como 'mousedown', 'mouseup', nao eh?, que sao, basicamente, a mesma coisa que o 'keyup' e o 'keydown', nos clicamos, o 'mousedown' eh disparado, nos soltamos, 'mouseup' eh disparado. E o 'click', Normandes, a gente nao viu o 'click'?
+
+ 11. Sim, o 'click' eh acionado depois do 'mouseup'. Entao, voce tem esses 3 ai, da para voce usar todos. O 'click' eh o mais famoso, nao eh?, voce clicou e liberou, lanca uma vez o evento clique, nao eh?
+
+ 12. Tem o 'doubleclick' tambem, eh 'dblclick', quando voce quer saber, quero pegar o evento clicou duas vezes em alguma coisa, entao, tem tambem esse evento. E cada um desses eventos tem um objeto, que contem informacoes uteis para a gente, como, por exemplo, qual a tecla que foi pressionada no 'keyup'? Da para a gente recuperar essa informacao dentro do objeto que o evento entregou para a gente na funcao, okay?
+
+ 13. Mas, nos tambem podemos criar nossos proprios eventos. E eh ai que eu acho bem legal, e o instrutor vai nos mostrar, nas proximas aulas, nos exemplos que a gente vai ver, como a gente pode criar os nossos eventos, como a gente usa eles, o instrutor acha que nos vamos gostar, porque o instrutor usa bastante isso, o instrutor cria muito evento proprio, no codigo Javascript, como o instrutor ja disse, o instrutor acha que o codigo fica mais organizado, fica mais separado, as coisas ficam mais curtinhas, pequenininhas, o codigo fica bem limpo, voce pega uma funcaozinha, ela faz poucas coisas.
+
+ 14. Uma outra funcionalidade maior eh, eu disparo um evento, caiu em uma outra funcao, entao, nao fica tudo em uma unica funcao so, okay? 
+
+ 15. Fim da Aula 08.001. Introducao a Eventos.
+
+ 
+-->

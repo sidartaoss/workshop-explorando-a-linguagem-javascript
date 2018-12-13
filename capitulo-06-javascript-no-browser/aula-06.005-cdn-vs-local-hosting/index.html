@@ -1,0 +1,167 @@
+<!-- 
+
+	Aula 06.005. CDN vs Local Hosting
+	
+1. Vamos falar agora sobre a utilizacao de CDN ou usar arquivo local. Nos percebemos que, quando fomos criar esta pagina aqui, pegamos este link aqui do Bootstrap e colamos direto. 
+
+2. Nos fomos na pagina do Bootstrap e colamos diretamente aqui no head.
+
+3. Nos fomos aqui na pagina do Bootstrap, http://getbootstrap.com, clicamos aqui em Getting Started, e fomos em Bootstrap CDN, copiamos esse primeiro link aqui, e colamos aqui no nosso arquivo html e tudo funcionou.
+
+4. Na hora em que a gente acesou a pagina aqui, vamos ate dar uma olhada la de novo, estamos vendo que o estilo do Bootstrap foi aplicado aqui, e a pagina ficou bonitinha, ja porque nestamos usando as classes do Bootstrap.
+
+5. E nos so colocamos esse link aqui,
+
+href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+, nao fizemos o download de nada.
+
+6. Por que? Porque nos estamos recuperando o arquivo CSS, esse arquivo CSS bootstrap.min.css, do Bootstrap, da Internet, desse endereco aqui, https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css, nos fomos la, copiamos e colamos aqui.
+
+7. Okay? Ou seja, este arquivo CSS aqui, se copiarmos esta linha aqui,
+
+https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css
+
+, e colarmos na Internet, esse arquivo CSS, nao baixamos ele para o nosso computador, estamos deixando o Browser recuperar ele da Internet,como eh que nos vemos isso?
+
+8. Nos podemos vir aqui no Developer Tools, Network, quando nos recarregarmos esta pagina, ai a gente pode olhar aqui, ele recuperou o index.html, o total.js e o bootstrap.min.css, ele foi recuperar la nesse endereco da Internet, 
+
+https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css
+
+9. O index.html ele foi buscar do arquivo local,
+
+file:///C:/Users/sosilva/workshop-javascript/capitulo-06-javascript-no-browser/aula-06.005-cdn-vs-local-hosting/index.html
+
+, o total.js, tambem, um arquivo local,
+
+file:///C:/Users/sosilva/workshop-javascript/capitulo-06-javascript-no-browser/aula-06.005-cdn-vs-local-hosting/total.js
+
+, mas, o bootstrap.min.css, ele foi buscar neste outro endereco,
+
+https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css
+
+10. E ai, voce pode perguntar, Normandes, o que que eh melhor, entao, usar, CDN ou nao usar CDN?
+
+11. O instrutor vai nos dar algumas razoes por que que a gente usa CDN ou nao usa CDN.
+
+12. Usar CDN para tudo, para CSS, para Javascript?
+
+13. Sim, tem gente que usa para CSS, tem biblioteca Javascript tambem, o jQuery, por exemplo, coloca la, pode colocar imagens no CDN, 	pode colocar videos, e por ai vai.
+
+14. Mas vamos falar aqui, especificamente, de um arquivo Javascript, por exemplo.
+
+15. Eh legal colocar, por exemplo, CSS, o arquivo CSS em CDN?
+
+16. O instrutor ira nos falar motivos de por que colocar.
+
+17. Bem ,se nos colocarmos em diferentes dominios da aplicacao, igual a esse aqui oh, 
+
+https://maxcdn.bootstrapcdn.com/, 
+
+, eh um dominio do Bootstrap, aqui, oh, maxcdn.bootstrapcdn.com, eh legal porque, quando nos estamos carregando a pagina, eh porque esta pagina eh simples, so tem 1 e 2 arquivos que vai carregar por fora, mas, se nos temos varios para carregar, o Browser, ele so faz, 4 ou 5 requisicoes ao mesmo tempo para o mesmo dominio.
+
+18. Entao, ele so vai fazer a, vamos supor que sao 5, ele so vai fazer a sexta requisicao se uma das 5 requisicoes ja tiver liberado. Entao, se nos tivermos o CDN externo, o que que vai acontecer? Este aqui eh um dominio diferente, maxcdn.bootstrapcdn.com, ele vai fazer esta requisicao, entao, nao vai parar, pode ser que fique mais rapido o nosso sistema.
+
+19. E esse arquivo pode ser cacheado, que eh o caso, aqui, do bootstrap.min.css.
+
+20. Olha so, se nos formos em Network, no Chrome DevTools, em bootstrap.min.css, Guia Headers, Status Code, ele retornou um 200 OK (from disk cache), ou seja, nao foi alterado esse arquivo bootstra.min.css desde a ultima vez, entao, ele ja nos retorna um arquivo do cache, mais rapido, okay?
+
+21. A infra-estrutura, normalmente, dessas empresas que colocam em CDN, tem uma escalabilidade muito boa, uma alta capacidade para receber requisicoes, entao, pode estar chegando muita requisicao ali, pode ser que esteja distribuido em varios servidores, entao, eh dificil que isso aqui fique fora do ar, e nos consigamos recuperar esse arquivo aqui tambem.
+
+22. Nos podemos escolher a versao especifica aqui,
+
+https://maxcdn.bootstrapcdn.com/bootstrap/
+>>3.3.6
+/css/bootstrap.min.css
+
+, ou podemos colocar para recuperar sempre a ultima, tem uns CDN's que falam, recupere sempre a ultima versao, de alguma biblioteca, entao, sempre o nosso site vai estar atualizado, por exemplo
+
+23. Nos vamos economizar espaco e trafego no nosso servidor, nos pagamos, normalmente, nos servidores, o tanto de arquivos que nos jogamos dentro dele, e a quantidade de dados que saem do nosso servidor.
+
+24. Entao, se este dado aqui, vamos supor, bootstrap.min.css, em 
+
+https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css
+
+, nao esta saindo do nosso servidor, esta indo a partir de um CDN, entao, nos vamos estar economizando dinheiro tambem.
+
+25. Esses sao motivos de porque usar um CDN.
+
+26. E por que nao usar um CDN? Nos vamos ter que pensar.
+
+27. Qual que voce acha, Normandes?
+
+28. Bom, nos temos que pensar, nos temos que ver a nossa situacao. Entao, o instrutor vai nos falar de por que nao usar CDN.
+
+29. Como que nos iremos trabalhar off-line?
+
+30. Se nos tivermos estivessemos fora da Internet, aqui, ao tentar carregar esta pagina aqui, ele nao ia conseguir carregar esse cara aqui,
+
+https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css
+
+, e a pagina ia ficar feia.
+
+31. E como eh que nos trabalhamos off-line? 
+
+32. Vamos supor que nos vamos pegar um voo e, ai, nesse voo, nos queremos pegar o notebook ali e ir trabalhalhando enquanto esta no aviao. Nos nao vamos conseguir, nao eh?
+
+33. Entao, no caso, nos precisariamos baixar e servir esse arquivo localmente.
+
+34. Pode ser que, aqui, a nossa Internet esteja liberada para tudo, mas, vamos supor que alguem va acessar essa nossa aplicacao em uma empresa e, la, eh bloqueado, justamente, esse endereco aqui,
+
+https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css
+
+35. O instrutor esta chutando aqui, pode ser que esse endereco seja bloqueado, e, ai, o site nao vai funcionar corretamente.
+
+36. O que mais que pode ser um problema?
+
+37. A seguranca. Por exemplo, alguem vai la, invadiu esse servidor,
+
+maxcdn.bootstrapcdn.com
+
+, e colocou um script malicioso no lugar aqui, nao eh?
+
+38. Entao, isso pode acontecer? 
+
+39. Sim, pode. Eh paranoia?
+
+40. Talvez sim, mas, como instrutor disse, nos vamos ter que pensar, nos vamos ter que decidir  que eh melhor para o nosso projeto. Nao existe a resposta certa, eh cada projeto nos termos que analisar, pensar, o que que eh melhor para ele.
+
+41. Fim da Aula 06.005. CDN vs Local Hosting.
+
+
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Debug com Developer Tools</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<style>
+		body {
+			padding: 20px;
+		}
+	</style>
+</head>
+<body>
+<div class="panel panel-default">
+	<div class="panel-heading">Cálculo valor total</div>
+	<div class="panel-body">
+		<div class="row">
+			<div class="col-xs-3">
+				<div class="form-group">
+					<label for="">Valor</label>
+					<input type="text" class="form-control" id="valor">
+				</div>
+			</div>
+			<div class="col-xs-3">
+				<div class="form-group">
+					<label for="">Valor total</label>
+					<p class="form-control-static" id="total">0</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script src='total.js'></script>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!--
+
+    Aula 07.007. Plugins jQuery
+
+    1. Lembra deste exemplo aqui, onde nos digitavamos aqui um valor, ai, tinha uma regrinha e, nessa regrinha, calculava o valor total ali, nao eh?
+
+    2.  Entao, se eu digitasse 1, dava 6.3; 10, dava 13; e 100 dava 100, valores acima de 50 ja era o valor total igual ao valor mesmo, nao eh?, abaixo ja tinham regras diferentes.
+
+    3. Bom, vamos la, o que que o instrutor quer fazer aqui nesta aula? Ele quer mostrar como usar plugins do jQuery.
+
+    4. O instrutor gosta bastante tambem dos pluins do jQuery, porque sempre tem um plugin para nos ajudar em alguma coisa. Voce quer fazer algo? Da uma procurada, que eh bem provavel que exista algum plugin do jQuery para nos ajudar, como, por exemplo, neste caso aqui, o instrutor ira usar para formatar aqui, enquanto eu digito o valor. Eu quero que, a medida em que eu for digitando, ele va colocando aqui virgula, ponto, para separar milhagem, separar decimal, nao permita eu digitar letra, coisas assim, ta okay?
+
+    5. Vamos usar um plugin desses? Daria para eu desenvolver tudo com Javascript? Daria, na verdade, o plugin do jQuery eh escrito com Javascript, usando funcoes do jQuery, okay?
+
+    6. Depois, o instrutor nos mostra eh possivel nos criarmos um plugin do jQuery. Nao eh tao complicado. O instrutor ira nos mostrar a documentacao aqui do jQuery, com o guia para nos, caso queiramos estudar um pouco mais, ler sobre isso, o instrutor nos mostra ali onde nos podemos ler, como comecar a fazer isso.
+
+    7. Nao eh tao simples, nao, mas, eh possivel fazer.
+
+    8. Okay? Entao, olha so, voltando aqui para o arquivo index.html.
+
+    9. Eh o mesmo codigo que estava la, quando a gente estava vendo sobre Debug, nao eh, e, aqui, entao, nao muda em nada e, no arquivo Javascript, esta o Javascript aquele que a gente usou, so que, a unica diferenca eh que o instrutor jogou ele aqui dentro de uma funcao que eh executada depois que carrega, nao eh?, o DOM esta todo carregado, beleza?, e ele nem esta com jQuery, entao, nos vamos ter que transformar esse codigo para o jQuery para o plugin funcionar, para a gente poder trabalhar com o jQuery agora.
+
+    10. Entao, vamos la. O plugin que o instrutor ira nos mostrar aqui eh o jquery-maskmoney, https://github.com/plentz/jquery-maskmoney, esse plugin eh uma forma simples, como ele mesmo diz, para criar uma mascara para os nossos campos de moeda, okay?, com o jQuery.
+
+    11. Entao, como a gente pode fazer o Download dele para usar? Podemos clicar aqui, oh, em https://cdn.rawgit.com/plentz/jquery-maskmoney/master/dist/jquery.maskMoney.min.js, e baixar o Javascript, o arquivo Javascript direto, nos colocarmos dentro do nosso projeto, ou podemos usar CDN. Nos vamos usar CDN aqui, para ficar mais facil, eh esse cara aqui oh, em https://cdnjs.com/libraries/jquery-maskmoney/, vamos usar esse cara aqui,
+
+    https://cdnjs.cloudflare.com/ajax/libs/jquery-maskmoney/3.0.2/jquery.maskMoney.min.js
+
+    , vamos copiar ele, e, ai, o instrutor ja quer nos falar onde nos vamos colar ele.
+
+    12. Se a gente olhar aqui na nossa parte de Javascript,
+
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src='plugins-jquery.js  '></script>
+
+    , eu poderia colocar ele aqui, nao eh?, 
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-maskmoney/3.0.2/jquery.maskMoney.min.js"></script>
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src='plugins-jquery.js  '></script>
+
+    13. Poderia colocar ele aqui,
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-maskmoney/3.0.2/jquery.maskMoney.min.js"></script>
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src='plugins-jquery.js  '></script>
+
+    , aqui,
+
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-maskmoney/3.0.2/jquery.maskMoney.min.js"></script>
+<script src='plugins-jquery.js  '></script>
+
+    , ou, aqui,
+    
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src='plugins-jquery.js  '></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-maskmoney/3.0.2/jquery.maskMoney.min.js"></script>
+
+    14. Qual das 3 opcoes voce acha que eu devo colocar? Bom essa aqui,
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-maskmoney/3.0.2/jquery.maskMoney.min.js"></script>
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src='plugins-jquery.js'></script>
+
+    , nao eh. Por que? Porque ele usa o jQuery como ferramenta para ele poder, como ferramenta, para ele poder funcionar. Entao, se eu salvar ele aqui e tentar executar, vamos la, aqui na pagina, vamos dar uma olhada aqui no Console do Chrome DevTools, mandei executar.
+    
+    15. Olha la, ja deu erro la no jquery-maskmoney, beleza? E nem sempre o erro que esta falando, oh, 'Coloque o plugin do jQuery'. Tem uns que dao, que mostram la, falam assim, oh, 'Eu preciso do jQuery funcionando', por isso que nao funcionou. Entao, eu preciso colocar ele abaixo do jQuery, okay?
+
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-maskmoney/3.0.2/jquery.maskMoney.min.js"></script>
+<script src='plugins-jquery.js'></script>
+
+    16. E a mesma coisa agora, se eu colocar ele aqui embaixo,
+
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src='plugins-jquery.js'></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-maskmoney/3.0.2/jquery.maskMoney.min.js"></script>
+
+, do nosso Javascript, nao vai funcionar, porque eu vou precisar usar esse plugin. Se eu colocar ele em cima, seu eu colocar o nosso em cima, eu nao vou conseguir usar. Entao, a ordem correta eh, primeiro, eu preciso do plugin do jQuery, primeiro, eu preciso do jQuery, depois, o plugin do jQuery, depois, os nossos arquivos.
+
+    17. Okay? Agora, se eu voltar aqui e executar, vamos ver como que a gente usa para configurar ele ali.
+
+    18. Beleza. Ver arquivo plugins-jquery.js.
+
+-->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Plugins com jQuery</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<style>
+		body {
+			padding: 20px;
+		}
+	</style>
+</head>
+<body>
+<div class="panel panel-default">
+	<div class="panel-heading">Cálculo valor total</div>
+	<div class="panel-body">
+		<div class="row">
+			<div class="col-xs-3">
+				<div class="form-group">
+					<label for="">Valor</label>
+					<input type="text" class="form-control" id="valor">
+				</div>
+			</div>
+			<div class="col-xs-3">
+				<div class="form-group">
+                    <label for="">Valor total</label>
+                    <input type="hidden" id="total-mascara">
+					<p class="form-control-static" id="total">0</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-maskmoney/3.0.2/jquery.maskMoney.min.js"></script>
+<script src='plugins-jquery.js'></script>
+</body>
+</html>

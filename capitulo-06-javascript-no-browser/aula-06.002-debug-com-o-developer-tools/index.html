@@ -1,0 +1,135 @@
+<!-- 
+
+    Aula 06.002. Debug com o Developer Tools
+
+ 1. O objetivo desta aula eh o instrutor nos mostrar como a gente pode fazer o debug no Javascript, que eh para a gente descobrir problemas.
+
+ 2. E ai, o que o instrutor pensou? O instrutor vai criar uma pagina html aqui, ja foi criado aqui o index.html, e um javascript aqui, total.js, que vai fazer o que? Vai pegar o valor de um input, a gente vai ter um campo ali de entrada, e, quando digitarmos alguma coisa nesse campo, vai ser calculado o valor total.
+
+ 3. E, ai, nos vamos adicionar algumas regras, o instrutor inventou essas regras so para a gente poder ter alguma coisa ali para fazer debug. Entao, imaginemos, nos temos que fazer algum calculo, do valor de um produto, baseado no preco dele, entao, essa eh a ideia.
+
+ 4. Vamos la, vamos criando a pagina aqui, nos vamos entendendo melhor aqui.
+
+ 5. Vamos criar uma pagina aqui, html, vamos colocar aqui, vamos chamar 'Debug com Developer Tools'
+
+ 6. Vamos usar o Bootstrap aqui? Vamos pegar aqui, em http://getbootstrap.com/getting-started, vamos pegar somente esse link aqui, <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">, para a gente adicionar la, vamos adicionar aqui no head. Okay? Porque, ai, vai ficar mais bonitinha a pagina, nao eh?
+
+ 7. Vamos la, nos vamos criar aqui, um painel Bootstrap, com heading, e, ai, nos vamos usar um carinha, oh, so para nos mostrar, nao eh o objetivo ficar nos mostrando sobre isso, mas eh o seguinte, o instrutor vai digitar assim oh, div.panel.panel-default>, vamos colocar dentro desse panel-default, .panel-heading e com o texto 'Calculo valor total', por exemplo, e vai ser o irmao dele, o div .panel-body
+
+ div.panel.panel-default>.panel-heading{Calculo valor total}+.panel-body
+
+ e da-se um <ENTER> e aparece:
+
+        <div class="panel panel-default">
+            <div class="panel-heading">Calculo valor total</div>
+            <div class="panel-body"></div>
+        </div>    
+
+ 8. Olha so, isso que o instrutor fez aqui, o instrutor foi colocando, para ja criar as div's dessa forma aqui para nos.
+
+ 9. Normandes, como eh que voce fez isso? Isso eh esse camarada aqui oh, http://emmet.io, eh uma ferramenta que nos conseguimos instalar que nos nos devolve varios snippets aqui, entao, se nos vermos o demo dele, ele vai nos falando, nos podemos ir digitando algumas coisas, e, na hora em que nos damos um <TAB> ou <ENTER>, ai, ele ja gera o resto tudo.
+
+ 10. Entao, o instrutor usa esse plugin, no inicio, pode ser estranho, mas, depois, nos vamos acostumando. Entao, se nos ficarmos interressados, eh so ver como instalar esse emmet no Sublime Text, ele funciona em outros editores tambem. 
+
+ 11. Bom, aqui dentro do panel-body, nos vamos colocar um div row, dentro dele, nos vamos colocar um div com a classe col, ai, aqui, eh coisa do Bootstrap, col-xs-3, dentro dele, vai ser um form-group,
+
+ .row>.col-xs-3>.form-group
+
+ , vamos ver o que que virou,
+
+                <div class="row">
+                    <div class="col-xs-3">
+                        <div class="form-group">
+                            
+                        </div>
+                    </div>
+                </div>
+
+ 12. E, ai, dentro desse form-group, nos vamos colocar um label{Valor}, e vamos colocar tambem um input, com a classe form-control, de ID valor,
+
+ label{Valor}+input.form-control#valor
+
+ 13. Vamos dar uma olhada como que esta ficando no Browser?
+
+ 14. Vamos dar so um padding ali no body, vamos colocar direto aqui mesmo, no head,
+
+ <style>
+     body {
+         padding: 20px;
+     }
+ </style>
+
+ 15. Entao, a ideia do instrutor, aqui, eh: Quando digitarmos um valor aqui no campo Valor, nao vamos validar se for digitado letra ou nao, vamos colocar aqui um valor e o instrutor quer que tenha, ao lado, um campo estatico que va atualizando esse valor.
+
+ 16. Entao, vamos la, vamos criar, aqui, outra coluna. Vai ser tambem .col-md-3>, seguido de um .form-group,
+
+ .col-md-3>.form-group
+
+ 17. Ta legal. 
+
+                    <div class="col-md-3">
+                        <div class="form-group"></div>
+                    </div>
+
+ 18. Ai, aqui dentro, vamos colocar um label, com o texto 'Valor total', e vai ter um irmaozinho, que vai ser o div, um paragrafo, de classe form-control-static, que eh a classe do Bootstrap, que permite adicionar um texto estatico, de ID total, 
+
+ label{Valor total}+p.form-control-static#total
+
+                            <label for="">Valor total</label>
+                            <p class="form-control-static" id="total"></p> 
+
+ 19. Vamos colocar o valor 0 inicial.
+
+                             <label for="">Valor total</label>
+                            <p class="form-control-static" id="total">0</p> 
+
+ 20. Eh isso ai, vamos olhar aqui, no Browser.
+
+ 21. Entao, oh, queremos digitar aqui 1, por exemplo, ai, o campo ao lado vai calcular e vai mostrar o valor total baseado no valor que digitamos.
+
+ 22. Nao vai ser simplesmente replicar, nos iremos criar algumas regrinhas para a gente errar, o objetivo eh nos errarmos alguma coisa, e, ai, mostrar como que a gente pode fazer, no Debug, aqui, para entender o que que esta acontecendo.
+
+ 23. Okay? Entao, beleza, esta faltando, agora, carregar o Javascript.
+
+ 24. Vamos carregar ele aqui, ao final do arquivo html, carregar o script, em src, vamos definir o total.js.
+
+ <script src="total.js"></script>
+
+ 25. Ver arquivo total.js.
+
+ -->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <title>Debug com Developer Tools</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <style>
+        body {
+            padding: 20px;
+        }
+    </style>
+    </head>
+    <body>
+        <div class="panel panel-default">
+            <div class="panel-heading">Cálculo valor total</div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="">Valor</label>
+                            <input type="text" class="form-control" id="valor">
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="">Valor total</label>
+                            <p class="form-control-static" id="total">0</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="total.js"></script>
+    </body>
+</html>

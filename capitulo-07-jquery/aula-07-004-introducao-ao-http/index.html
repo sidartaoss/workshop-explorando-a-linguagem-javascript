@@ -1,0 +1,58 @@
+<!--
+
+  * Aula 07.004. Introducao ao HTTP
+  *
+  * 1.  Antes de o instrutor nos falar sobre o AJAX, ele quer nos fazer uma pequena introducao sobre o protocolo HTTP para nos, vamos so trocar uma ideia, ja eh um protocolo bem antigo e todo mundo esta usando ha muito tempo, entao, eh bem possivel que nos ja conhecamos alguma coisa.
+
+  2. O instrutor quer so trocar uma ideia, reforcar coisas simples do protocolo HTTP, beleza?
+
+  3. Entao, vamos la. Quando a gente tem o Browser, no caso aqui, representado pelo logo do Google Chrome, okay?, e temos o servidor do outro lado. Entao, imagina, voce ai no seu computador, abriu o navegador, e, ai, vai digitar o endereco do Google, www.google.com, e, ai, quando voce der um <ENTER>, uma requisicao vai chegar no servidor do Google, nao eh, e, ai, a pagina do Google vai ser devolvida para nos.
+
+  4. O que que esta envolvido aqui nesse caminho?
+
+  5. O HTTP. Ele eh o protocolo que nos ajuda a fazer isso funcionar. Entao, quando nos digitamos o www.google.com, e, ai, damos o <ENTER>, uma requisicao HTTP, (HTTP Request), eh enviada la para o servidor do Google. Ai, um monte de coisas estao envolvidas ai, DNS, e etc., nao precisamos entrar nesses detalhes.
+
+  6. Okay? E ai, o Google processa essa Requisicao, o Servidor vai processar essa Requisicao, e nos devolver uma Resposta, (HTTP Response), HTTP tambem, entao, vem uma Resposta para o Browser recuperar essa resposta e desenhar, renderizar aquilo ali na tela para nos vermos.
+
+  7. Okay? Eh, basicamente, assim, que funciona toda a Internet, tudo, tudo eh HTTP Request para la e HTTP Response para ca.
+
+  8. Tem algumas coisas a mais? Tem. Tem alguns outros protocolos tambem que sao usados, mas, de longe, o HTTP eh o mais utilizado mesmo.
+
+  9. Okay? Mas, vamos la. O que mais aqui que eu... so, mas, o que que tem dentro desse HTTP?
+
+  10. Tem algumas informacoes. Quando nos estamos enviando aqui, o que que tem dentro do HTTP? Tem um verbo. E esse verbo eh muito importante nos sabermos sobre ele. 
+
+  11. O verbo, quando a gente esta falando, eh uma acao, nao eh? Entao, oh, GET, POST, PUT, eh a acao que voce quer fazer com o HTTP la no servidor. Entao, se eu estou enviando um GET, cada uma dessas requisicoes tem um objetivo.
+
+  12. Se eu estou enviando um GET, normalmente, eu quero recuperar alguma coisa. Se eu estou enviando um POST, normalmente, eu quero inserir alguma informacao, o PUT, normalmente, eh atualizar alguma informacao.
+
+  13. Tem o verbo DELETE, que eh para deletar alguma informacao tambem la no servidor. Eu mando a URL, entao, HTTP, dois pontos, o host, nao eh, o endereco que nos estamos trabalhando, e, ai, o instrutor ate colocou um exemplo, ai, cidades, http://host/cidades?uf=MG, interrogacao, uf=MG, como se eu fosse dizer assim, oh, 'Eu quero buscar todas as cidades onde o estado eh Minas Gerais', porque o exemplo que o instrutor vai nos mostrar de Ajax sera esse, agora, nas proximas aulas.
+  * 
+  14. Podemos mandar alguns Headers, tambem, entao, nos podemos mandar o Header Accept, Accept-Language, etc. O Accept para falar o que que eu aceito de volta, qual o tipo de dado que eu aceito de volta. O Accept-Language, qual que eh a lingua minha preferida, eu quero, eu prefiro, se voce tem ai a opcao ingles e portugues, eu prefiro a portugues, por exemplo, o Browser ja pode mandar essas informacoes e o servidor ja nos devolve isso prontinho, okay?
+
+  15. E tambem eu posso mandar parametros, nao eh, Query String, Payload, posso mandar varias coisas. Query String eh, no caso, uf=MG. O Payload, se eu estiver fazendo POST, vamos supor que eu estou me cadastrando em algum site, eu vou mandar informacoes como o nome, data de nascimento, CPF, essas coisas, eu mando em um Payload, em um POST para uma determinada URL, okay?
+
+  16. Ai, o Servidor trata isso e nos devolve uma Resposta. O que vem nessa Resposta? Vem um Codigo de Resposta. Entao, pode vir la, 200 OK, 404, 500. Normalmente, '2' para alguma coisa '2xx' eh a Resposta de sucesso, o Request chegou no Servidor, o Seridor entendeu o que nos mandamos e falou: 'Obrigado, esta tudo certo aqui, toma a sua resposta'. Normalmente, os erros '4', '4xx', '4 e alguma coisa', eh alguma coisa que o Cliente, do lado do Browser, fez errado. Entao, se nos acessarmos uma pagina que nao existe, nao eh, se nos colocarmos uma URL, vamos supor que nos coloquemos la, google.com/xyz, alguma coisa assim, ele pode nos reponder: 'Olha, essa pagina que voce tentou acessar nao existe', entao, ele nos devolve um 404, por que? Foi um erro nosso, nos, como usuarios do Browser, digitamos algo errado.
+
+  17. Agora, se retornar '5', '5 e alguma coisa', '5xx', 500, por exemplo, ai, eh um erro no Servidor. Nos tentamos fazer alguma coisa no Servidor e deu erro.
+
+  18. Ou seja, nos tentamos cadastrar la alguma coisa e, na hora, demos o submeter, deu um erro no Servidor, o banco de dados estava fora, alguma coisa assim, um erro 500, por exemplo, vai voltar para nos. 
+
+  19. Tambem vem Headers la, varios Headers ali, na Resposta. Content-Type, para falar, 'O que que eu estou te retornando, eh um HTML, eh um outro tipo, eh uma imagem, o que que eh?'
+
+  20. Entao, o Servidor nos fala isso no Header tambem. E tambem pode devolver conteudo de resposta, entao, ele pode devolver dados de resposta e, como o instrutor nos disse, o instrutor ira nos mostrar, aqui, ainda, no Ajax, funcionando, a gente, nas proximas aulas, vamos fazer uma Requisicao para um Servidor, e o Servidor vai nos devolver uma Resposta, nos vamos trabalhar nessa Resposta.
+
+  21. Okay? E o que que eh o AJAX?
+
+  22. O Javascript tambem tem acesso a esse HTTP Request, eu consigo, via Javascript, uma coisa eh o Browser, nos digitarmos la na URL, la em cima no Browser, google.com, e dar um <ENTER>, o Browser esta fazendo essa Requisicao, nos que clicarmos no botao que submete um formulario para uma determinada URL, o Browser esta submetendo todo aquele formulario la, nao eh?
+      
+  23. Outra coisa eh o Javascript iniciar essa Requisicao HTTP. Sim, eh possivel, o Javascript que esta rodando no Browser, ele iniciar essa Requisicao. E como o Javascript eh uma linguagem de programacao, a gente ja viu um monte de coisa de Javascript, nao eh?, entao, eu consigo, a partir do Javascript, fazer essa Requisicao HTTP e recuperar essa Resposta dentro do codigo Javascript e, como a gente vai ver, o Javascript consegue, a gente ja viu, nao eh, algumas coisas de Javascript maniulando o HTML da pagina, como adicionando o CSS, alguma coisa assim, nao eh?, entao, eu vou conseguir, baseado na Resposta do Servidor, fazer alguma mudanca, uma interacao no HTML, na DOM. 
+  
+  24. Entao, nos vamos fazer isso. O instrutor ira nos mostrar, a ideia eh nos termos um Combo de Estado e Cidade e, quando eu carregar a pagina, eu vou carregar os estados via AJAX, okay?, entao, eu vou la buscar todos esses estados, e desenhar isso na tela. Depois que eu selecionar um estado, eu quero que a Cidades correspondentes aquele Estado sejam carregadas em um outro Combo, um outro select ali. Eh isso que o instrutor quer nos mostrar para a gente trabalhar com AJAX e manipulacao do DOM. Beleza?
+
+  25. Fim da Aula 07.004. Introducao ao HTTP.
+
+
+
+  *
+-->

@@ -1,0 +1,85 @@
+<!-- 
+
+    Aula 07.001. Introducao ao jQuery
+
+1. Vamos falar, neste capitulo, sobre o jQuery. 
+
+2. O instrutor nao sabe se a pronuncia esta correta.
+
+3. Essa biblioteca Javascript, acredita-se que ja tenhamos ouvido falar dela, o instrutor gosta bastante, gosta muito, porque ela vai nos facilitar muito a nossa vida trabalhando com HTML, com manipulacao de eventos, ajax, ou seja, nos ajuda demais.
+
+4. E, tambem, ela se preocupa com a questao dos Browsers. Antigamente, era mais, quando o instrutor comecou a usar o jQuery, antigamente, era mais complicado, existia mais incompatibilidade, algumas coisas que nos faziamos em Javascript, funcionavam no Internet Explorer, ou o contrario, funcionava no Firefox, nao funcionava no Internet Explorer, ai, nos faziamos funcionar no Internet Explorer, parava de funcionar no Firefox, ai, depois, veio o Chrome, ai, comecou essa guerra de Browsers e, hoje, eh um pouco mais padronizado, funciona um pouco melhor.
+
+5. Mas, ainda assim, podem ter coisas que funcionam em um Browser e deixa de funcionar em outro. E o jQuery tenta se preocupar com isso, entao, ele, ate aqui na propaganda, o site dele eh jquery.com, aqui oh, Cross-Browser, ele tenta funcionar em varias versoes do Internet Explorer, Safari, Firefox, Opera, Chrome, or ai vai.
+
+6. Entao, facilita muito, esse ai eh o site dele, o que que eh muito importante aqui neste site?
+
+7. A API Documentation. O instrutor usa o tempo inteiro esse cara aqui, essa documentacao, o tempo inteiro. 
+
+8. Vejamos a quantidade de funcoes, de funcionalidades que o jQuery tem, tem muitas, e o instrutor nao sabe todas de cabeca.
+
+9. Entao, o instrutor precisa fazer alguma coisa com o jQuery, ah, tem jeito... adicionar uma classe CSS em um elemento, como eh que eh mesmo? Como eh que eh o nome?
+
+10. Entao, ah, vamos la na documentacao. Ai, normalmente, o instrutor vai aqui na documentacao, ai, oh, o link lateral CSS, nos queremos saber o que que o jQuery faz em relacao ao CSS?
+
+11. Ai, nos clicamos aqui, no link CSS, https://api.jquery.com/category/css/, ai, ele filtra, ele seleciona a categoria CSS, ai, ele filtra aqui e mostra as funcoes relacionadas ao CSS, ai, diminui, oh, ai, fica mais facil nos procurarmos: 'Ah, tal, eu queria ver aqui, oh, adicionar a classe CSS, .addClass(), eh aqui'. 
+
+12. E por ai vai. 
+
+13. Vamos ver, por exemplo, outra que o instrutor ve bastante, para vermos aqui, que eh dos seletores, aqui embaixo, oh, o link Selectors, https://api.jquery.com/category/selectors/, os seletores, essa categoria Seletores, tambem, a gente usa bastante, 'Eu quero pegar um elemento, como eh que eu posso pegar?', os checkboxes que estao checked, estao checados, ai, nos olhamos aqui, 'Ah, tah', ai, nos clicamos, https://api.jquery.com/checked-selector/, e, ai, ele tem um exemplo, a documentacao dele eh sensacional, ai, ele tem um exemplo, ele traz aqui um html e ja traz aqui um javascript, mostrando e, aqui, funcionando.
+
+14. Entao, eh analisar aqui a documentacao. As vezes, esta do jeitinho que nos precisamos? 
+
+15. Nao. As vezes,esta um pouquinho diferente alguma coisa, mas nos entendendo a ideia, lendo aqui a documentacao, o instrutor sempre le o que esta escrito aqui, esse checked aqui eh bem simplezinho, bem facil, ele esta pegando todos os inputs que estao checked, okay? Bem simples.
+
+16. Mas, vamos supor, vamos pegar, aqui, um em que a documentacao eh maior, por exemplo, na do Ajax, https://api.jquery.com/category/ajax/, clicou aqui no Ajax, tem o jQuery.ajax(), https://api.jquery.com/jQuery.ajax/, aqui, ja eh bem maior essa parte, essa pagina de documentacao, oh. Entao, tem muita coisa para ler, oh. E eh bem importante nos lermos, nos tentarmos entender. tambem tem os exemplos, sempre tem os exemplos aqui, no final, tem alguns exemplos, olha la, sempre tem algum exemplo para nos mostrar como usar determinada funcao do jQuery. 
+
+17. Se nos olhamos aqui, em jquery.com, tem duas versoes, versao 1.x, e versao 2.x. A gente pode, e nos vamos usar, a ultima versao, a 2.x, aqui, okay?
+
+18. Olha la, ele ja que a versao, 2.x, qual a diferenca? Eh a mesma API do jQuery 1.x., mas nao suporta Internet Explorer 6, 7, 8. Entao, a versao 2.x ja nao da mais esse suporte.
+
+19. Entao, nos precisamos olhar qual sistema que nos estamos fazendo. O instrutor acha que, hoje em dia, ninguem deve dar mais suporte a Internet Explorer 8, mas, se nos formos desenvolver algum sistema ai em alguma empresa que eles usam la, a empresa nao atualizou nada, nos temos que olhar, 'Opa, eu nao poso usar o jQuery 2.x, tem que se o 1.x'.
+
+20. E ai, na documentacao, tem algumas diferencas, isso, quando nos formos usar, vams pegar, aqui, em https://api.jquery.com/, no Ajax, https://api.jquery.com/category/ajax/, o instrutor esta tentando nos mostrar... nao, o instrutor acha que eh nos eventos, https://api.jquery.com/category/events/, o instrutor usa demais, nos vamos estudar, aqui, neste curso, por exemplo, o evento de click, https://api.jquery.com/click/. 
+
+21. Na verdade, eh na funcao bind(), https://api.jquery.com/bind/. Por exemplo, quando nos estivermos vendo, lendo a respeito da API, as vezes vem assim oh, a partir do jQuery 1.7, eh melhor nos usarmos o metodo .on() para atachar eventos no documento.
+
+22. Entao, quando nos estivermos lendo a documentacao, por isso que eh importante nos lermos, porque, dependendo da versao que nos estivermos usando, nos ja vamos saber se tem ou nao, qual que eh a melhor opcao para usar.
+
+23. E qui, tambem, ela, na versao 1.4, que foi adicionado a funcao .bind(events), https://api.jquery.com/bind/#bind-events. Essa outra sobrecarga aqui, https://api.jquery.com/bind/#bind-eventType-eventData-preventBubble, foi na versao 1.4.3. O bind dessa forma, https://api.jquery.com/bind/#bind-eventType-eventData-handler, foi na versao 1.0.
+
+24. Ta vendo? Entao, dependendo ai da versao do jQuery que nos estivermos usando, se o sistema eh um sistema legado, antigo, nos temos que tomar cuidado ai para usarmos.
+
+25. E eh isso daqui, o instrutor queria nos mostrar, entao, a documentacao, que essa parte aqui, https://api.jquery.com/, muito, muito imortante. A parte de Download, nos podemos usar, aqui, na versao 2.x, nos podemos fazer o Download aqui, da versao para producao, e ja vem uma versao comprimida do arquivo, vem um arquivo que nao da para a gente ler nada, um arquivo nao comprimido, e, ai, daria para a gente fazer Debug no jQuery. Nao eh o nosso caso, nos nao vamos precisar nada disso, nos podemos fazer o Download aqui, dessa versao, https://code.jquery.com/jquery-3.3.1.min.js, ou usar via CDN, olha la, nos podemos uar o jQuery, tambem, via CDN, vamos clicar em https://code.jquery.com/, e vamos baixar a ultima versao, 
+
+To see all available files and versions, visit https://code.jquery.com
+
+26. Vamos copiar a versao mimificada, 
+
+https://code.jquery.com/jquery-3.3.1.min.js
+
+27. Eh so copiar esse link aqui, ele vai trazer o jQuery, vai ser tudo mimificado.
+
+28. Okay? Entao, nos vamos usar essa URL aqui,
+
+https://code.jquery.com/jquery-3.3.1.min.js
+
+, vamos usar como CDN mesmo nos nossos exemplos aqui.
+
+29. Beleza? Que mais aqui do jQuery, importante? 
+
+30. Entao, como o instrutor disse, eh uma biblioteca Javascript, muito rica, muito importante, o instrutor gosta bastante. 
+
+31. Tem gente que nao gosta? 
+
+32. Tem. Tem gente que nao gosta, tem gente que prefere fazer as coisas  mais na mao, entao, eh possivel tambem. Mas, o instrutor gosta bastante, facilita muito a vida ai para trabalhar com jQuery. 
+
+33. Oh, quem usa? Sao empresas bem famosas.
+
+34. Eles tambem tem outros projetos, nos podemos dar uma olhada, tambem, jQuery user interface, jQuery mobile, etc.
+
+35. E eh isso dai. O instrutor vai nos mostrar atraves de exemplos, vai tentar trazer exemplos mais reais do que a gente ve no dia-a-dia, para a gente poder brincar um pouquinho com o jQuery.
+
+36. Fim da Aula 07.001. Introducao ao jQuery.
+
+-->

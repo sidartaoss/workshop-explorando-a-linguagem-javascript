@@ -1,0 +1,46 @@
+<!-- 
+
+    Aula 09.008. Disparando Eventos Customizados
+
+1. 
+
+-->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <title>Usando a funcao bind</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <style>
+        body {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="panel panel-default">
+    <div class="panel-heading">Estado e cidade</div>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label>Estado</label>
+                    <select id="combo-estado" class="form-control">
+                        <option value="MG">Minas Gerais</option>
+                    </select>
+                </div>                
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label>Cidde</label>
+                    <select id="combo-cidade" class="form-control" disabled>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="disparando-eventos-customizados.js"></script>
+</body>
+</html>

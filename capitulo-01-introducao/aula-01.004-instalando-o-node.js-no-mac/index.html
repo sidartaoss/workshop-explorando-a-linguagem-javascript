@@ -1,0 +1,125 @@
+<!-- 
+
+	Aula 01.004. Instalando o Node.js no Mac
+
+1. Nesta aula, nos vamos instalar o Node.js para executar o nosso codigo JavaScript.
+
+2. Como assim, Normandes, nao eh no Browser que executa? Sim, eh no Browser, mas o Node.js nos ajuda a executar Javascript na linha de comando, por exemplo, em um arquivo, na proxima aula, o instrutor ira mostar como a gente consegue colocar, entao, no editor de texto, a gente consegue executar o Javascript direto la, o que eh muito legal, porque vai facilitar mais a nossa vida demais, iremos ver.
+
+3. Bem, o Node.js eh bem grande, mas, basicamente, ele roda o engine do Chrome. Entao, nos conseguimos executar nele o mesmo Javascript que executariamos no Chrome, por exemplo. Eh claro que, se precisacessos manipular o DOM, por exemplo, acessar o valor de um input text, esse tipo de coisa, nos nao iremos conseguir fazer la da forma que a gente via fazer aqui no Browser, mas, para nos testarmos muita coisa, para testarmos, aprendermos sobre variaveis, sobre funcoes, muitas coisas assim, a gente vai conseguir fazer no Node.js e nos iremos ver que eh bem mais facil, nao precisamos ficar fazendo, carregando isso no Browser.
+
+4. Bem, o instrutor vai nos mostrar a instalacao no Mac e, depois, vai mostrar no Windows tambem.
+
+5. Bem, acessamos https://nodejs.org/en. Para o Mac, ele fala que nos podemos fazer, no caso, a versao OS X, do sistema operacional, ele fala para a gente baixar, ele recomenda a versao no botao Recommended For Most Users, que termina em LTS, (Long Term Support), resumindo, eh o suporte para essa versao eh muito longa, eles vao corrigir bugs dela por muito tempo, entao, eles recomendam essa, apesar de a atual dela, com as ultimas features, ja estar na versao apontada pelo botao Current. 
+
+6. Vamos usar a versao LTS, porque, para o objetivo deste curso, esta excelente. So que, ao ives de clicar no botao para baixar o package, iremos usar o Homebrew, que eh, se ainda nao conhecemos, e se nos usamos Mac, eh nao conhecemos o Homebrew, ou seja, https://brew.sh, ele eh um gerenciador de pacotes para o OS X.
+
+7. Entao, devemos instala-lo, primeiramente, eh so copiar a primeira 
+linha de commando do site e colar no terminal, que iremos conseguir 
+instalar.
+
+8. Eh o gerenciador de pacotes que facilita a instalacao, entao, o 
+instrutor ira instalar o Node.js a partir da linha de comando, 
+usando o Homebrew.
+
+9. Entao, o instrutor quer instalar a versao apontada no botao com 
+final LTS. O instrutor vai para o terminal do Mac e, ai, o instrutor 
+ja esta com o Homebrew instalado, mas nao esta com o Node.js 
+instalado. Quando o Node.js estiver instalado, vamos digitar node no 
+terminal e damos <ENTER>, a gente vai entrar dentro do console do node, entao, a gente vai 
+conseguir fazer os testes.
+
+10. Entao, nao estamos com ele instalado, mas ja temos o Homebrew instalado,
+que eh soment eo comando brew. E, ai, nesse comando, nos podemos, por
+exemplo, dar um -h, vamos digitar o comando
+
+brew info node
+
+
+, por exwemplo. Ele vai nos dar informacoes do pacote node que tem la
+no repositorio. Eh um lugar, eh um local cheio de aplicacoes, onde nos
+podemos instalar. Entao, nos queremos saber informacoes sobre o node. 
+
+11. O node, a versao que ele tem aqui para instalar eh a 5.4.1, mas 
+lembremos, aqui, em nodejs.org, que o node.js rrecomenda a versao 4.4.4, 
+nos queremos usar essa versao. 
+
+12. Entao, nao iremos instalar essa versao aqui, a 5.4.1. Se nos, simplesmente,
+fizermos
+
+brew install node
+
+, ele vai instalar essa versao 5.4.1. Nao queremos instalar a versao
+5.4.1, queremos a 4.4.4. Entao, o certo eh nos fazermos um 
+
+brew search node
+
+, e, ai, vai aparecer as versoes do node. Se nao aparecer
+isso para nos podemos dar um 
+
+brew tap homebrew/versions
+
+, entao, ele ja traz todas as versoes.
+
+13. Depois desse comando, entao, 
+
+brew tap homebrew/versions, 
+
+nos iremos dar o comando
+
+brew search node
+
+, e vai aparecer a versao node4-lts, long-term-support, entao, nos iremos copiar
+essa versao, e vamos dar um
+
+brew install homebrew/versions/node4-lts
+
+, agora, ele vai instalar essa versao, vai baixa-la.
+
+14. Aqui, ja tinhamos feito o download, entao, se nao tivermos feito, ele
+vai fazer o download, vai descompactar e vai instalar no nosso 
+computador. 
+
+15. Ai, eh so esperar um pouquinho, e pronto. ja esta instalado.
+
+16. Agora, nos podemos, simplesmente, digitar node, por exemplo, e nos
+vamos cair dentro do console do node. 
+
+17. E, aqui, nos podemos, por exemplo, colocar o comando console.log(), 
+nos vamos, ainda, ver esse console.log, mas, se nos fizermos 'Olá',
+alguma coisa assim, ele vai dar um retorno,
+
+18. Se colocarmos var x = 10; x = x + 2; entao, nos temos sempre o valor
+aqui, nos conseguimos trabalhar com o Javascript aqui no console com 
+o Node.
+
+19, nos vamos conseguir declarar funcoes aqui, fazer testes rapidos 
+assim, para a genter brincar aqui de uma forma mais facil, nao precisar
+carregar no browser, como o instrutor ja disse.
+
+20. Entao, essa eh a instalacao. Para sair, damos CTRL+C, e CTRL+C again,
+mais uma vez. 
+
+21. Lembrando>
+
+brew tap homebrew/versions
+
+, vai aparecer todas as versoes, depois>
+
+brew search node
+
+, ai, depois de brew search node, vai aparecer todas as versoes que
+ele conseguir baixar aqui, e, entao>
+
+brew install homebrew/versions/nodee-lts
+
+, ou seja, copiamos a versao desejada, e pronto, ele vai instalar o node.
+
+22. Depois disso, eh so dar um node, so para ver se esta funcionando,
+vai entrar no console do node, e fazemos um testezinho, var y = 10;
+que retorna a variavel e o valor dela.
+
+23. Fim da Aula 01.004. Instalando o Node.js no Mac.
+
+
+-->

@@ -1,0 +1,78 @@
+<!-- 
+    Aula 06.001. Conhecendo o Developer Tools
+
+1. O instrutor quer nos mostrar, agora, uma ferramenta para desenvolvimento web muito, muito, muito util, mesmo. 
+
+2. Se nos ainda nao a utilizamos, quando comecarmos a utiliza-la, nos vamos ver que a nossa produtividade, a nossa rapidez de descobrir problemas de html, css, javascript, vai ser muito mais rapida, que eh o Developer Tools do Google Chrome.
+
+3. Entao, estamos com o Chrome instalado aqui, e o instrutor vai nos mostrar ela, como eh que a gente acessa ela aqui, fazer alguns testezinhos, depois, o instrutor vai nos mostrar como eh que a gente faz Debug, okay?
+
+4. Primeiro, o instrutor vai nos mostrar como a gente acessa ela.
+
+5. O instrutor usa essa do Google Chrome. Tem outras?
+
+6. Tem. O instrutor sabe que tem outras, antigamente, o instrutor usava o FireBug, que ear um plugin que nos conseguiamos instalar no Chrome, tinha para o Firefox tambem. 
+
+7. No Firefox tem? O instrutor acha que tem, tambem, uma ferramenta la, mas o instrutor usa muito mais para descobrir os problemas daqui no Chrome do que nos outros Browsers.
+
+8. Entao, vamos la. O instrutor esta aqui na pagina do Google, para nos mostrar ela.
+
+9. Se nos clicarmos no menuzinho do botao de 3 barrs, que fica no canto superior direito do Google Chrome - More Tools - Developer Tools. Ai nnos vemos o atalho. O instrutor utiliza sermpre o atalho para abrir, eh bem mais rapido.
+
+10. Ai, ele ja vai abrir aqui, o Chrome DevTools. O instrutor utiliza o atalho que, no caso do Mac, eh command + option + J, ai, ele ja abre direto na Guia Console do Chrome DevTools.
+
+11. As vezes, o instrutor esta fazendo algum debugzinho, quer ver no Console, Command Option J, ele abre, e fecha tambem. 
+
+12. Mas vamos la. O que que essa ferramenta faz? Como o instrutor ja disse, nas proximas aulas, o instrutor vai nos mostrar, a gente vai criar um programinha, uma paginazinha em html, com Javascript, para a gente brincar com Debug aqui do Developer Tools.
+
+13. O instrutor so quer nos mostrar o que que ele faz aqui, como eh que nos podemos abrir.
+
+14. Nao da para mostrar tudo que ele faz, mas ja eh um primeiro passo para nos comecarmos a brincar. 
+
+15. Entao, vamos la. Aqui em Elements, nos temos todos os elementos da pagina, entao, a medida que nos vamos passando o mouse aqui, no codigo, ele vai selecionando os elementos ali da pagina, e nos conseguimos clicar aqui nesse botao com setinha, a esquerda, e ir direto selecionar o que que nos queremos.
+
+16. Ai, ele vai mostrando direto no html, queremos ver esse botao, esse outro botao, esse input, vamos ver a logo aqui do Google, clicamos aqui, ele trouxe aqui para esse div, ah vamos ver,vamos ver, vamos tentar descobrir a URL, de onde esta vindo essa imagem?
+
+17. Provavelmente, esta no CSS, nao esta aqui. Entao, se a gente, com a div aqui, clicada, do lado direito, na guia Styles, aparece o estilo desse elemento, qu ele esta selecionado.
+
+18. element.style eh o que foi definido direto nele, background, height, width. Tem algumas questoes que foram feitas em classe, arquivo Css tambem. Entao, olha so, o background aqui, eh aqui, daqui que vem a logo do Google. Entao, nos podemos, com o botao direito, Open Link in New Tab, e, ai, nos vamos ver a logo do google aqui direto.
+
+19. se nos clicarmos aqui para sumir, tem em dois lugares aqui, em Styles, deve ter algum motivo,  o instrutor acha que, dependendo do  tamanho da tela, vamos tirar os dois, olha la, sumiu a logozinho do Google, okay?
+
+20. Que mais aqui? Da para nos alterarmos direto aqui, vamos la, vamos inspecionar aqui esse botao. Se nos clicarmos com o botao direito, tambem podemos ir direto la, Inspect, ele ja caiu la selecionado.
+
+21. Esta la,
+
+<input value="Pesquisa Google" aria-label="Pesquisa Google" name="btnK" type="submit" jsaction="sf.chk">
+
+, Pesquisa Google, vamos colocar aqui um ' - Teste ', conseguimos alterar o que esta no botaozinho.
+
+22. Entao, essa ferramenta eh muito util para questoes de Design, nos vimos que o instrutor trabalhou aqui direto no HTML, e, aqui, no CSS, na guia Styles, mas, aqui, no Console do Chrome DevTools, que eh o que o instrutor vai nos mostrar nas proximas aulas, a gente tambem consegue interagir com Javascript, aqui, dessa pagina. O instrutor vai nos mostrar mais coisas sobre ele, entao, aqui, a gente vai conseguir ver, por exemplo, lembra la do console.log() que a gente colocava e mostrava la no Sublime? 
+
+23. Aparecia, la embaixo, console.log()?
+
+24. O console.log(), se nos colocarmos no arquivo javascript e carregar aqui no browser, vai aparecer aqui, okay?
+
+25. Entao, as coisas que o instrutor usa bastante, aqui, quais dessas Guias> Elements, Console, Sources, Network, Timeline, Profile, Resources, Security, Audits que o instrutor usa bastante?
+
+26. Elements, aqui, quando esta tentando mexer alguma coisa de Design, apesar de nao ser o forte do instrutor, mas o instrutor tenta, aqui, fazer alguma coisinha.
+
+27. Na Guia Console, o instrutor trabalha bastante com Javascript, aqui, para verificar. Em Network, tambem, o instrutor usa muito. Por que, em Network, o instrutor usa muito?
+
+28. Para verificar as requisicoes HTTP aqui que ele esta fazendo. Entao, vamos dar um refresh aqui, em http://www.google.com.br, olha so o tanto de requisicoes que, quando carregamos essa pagina, foram feitas.
+
+29. Primeiro, ele fez uma requisicao GET, nao vamos entrar em detalhes aqui, nao eh, sobre isso?, mas, ele fez uma requisicao GET, oh, no Google. Esses aqui sao os Headers de resposta, qual foi a resposta, em Response, ai, vem a pagina inteira. 
+
+30. O que mais? Ele fez uma requisicao para esse logo, fez uma requisicao para o logo dele, onde ele esta, e foram outras aqui, requisicoes HTTP.
+
+31. O instrutor tambem usa direto aqui a Guia Network, para isso.
+
+32. Basicamente, sao essas aqui, sao as Guias principais. As outras sao importantes, tambem, eh claro, sao importantes, mas nos vamos trabalhar mais nessas aqui, que o instrutor acabou de nos mostrar.
+
+33. Beleza? Entao, na proxima aula, o instrutor vai tentar nos mostrar, ja, mais alguma coisa, vamos criar uma pequena pagina para a gente ja testa alguma coisa de Debug.
+
+34. Fim da Aula 06.001. Conhecendo o Developer Tools.
+
+
+
+-->

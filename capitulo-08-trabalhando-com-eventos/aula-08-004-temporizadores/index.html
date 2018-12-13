@@ -1,0 +1,65 @@
+<!-- 
+
+    Aula 08.004. Temporizadores.
+
+    1. O instrutor ira falar, agora, sobre temporizadores, que tambem eh bem legal no Javascript.
+
+    2. E, para isso, eu criei um exemplo aqui, da seguinte forma, ja viu, em paginas, isso eh muito comum em Marketing, voce tem um video, quando voce carrega a pagina, voce assiste o video, e, depois de um tempo, aparece um botao para voce clicar ali, e ir para outra pagina, comprar, alguma coisa assim, nao eh?
+
+    3. Bom, entao, quando eu carregar esta pagina aqui, aqui, o instrutor ja deixou todos os controles para poder dar pause, e tal, mas, normalmente, o pessoal do marketing nao coloca, nao eh?, ja deixa direto o play aqui, nao eh?, sem os controles, para nos assistirmos o video, conhecer o que a gente esta oferecendo e, depois, vai aparecer um botao para nos clicarmos e comprarmos aquele produto.
+
+    4. Beleza? Bom, so que, aqui, como voce viu, o botao esta aparecendo direto. Como eu faco para, depois de um determinado tempo, esse botao aparecer, executar um codigo aqui e esse botao aparecer?
+
+    5. Vamos dar uma olhada aqui, o que que o instrutor fez?
+
+    6. Sao dois div's, o div que o instrutor colocou o iframe do Youtube, o instrutor pegou um video qualquer la, da AlgaWorks, pegou o codigo embbeded, de la. E tem outro div que tem so o botao Clique aqui.
+
+    7. Beleza? o ID do botao eh botao-clique-aqui. Bom, esse botao esta ja aparecendo. Vamos fazer para ele, na hora de carregar, ja vai sumir.
+
+    8. Entao, eu posso criar, aqui, uma classe, por exemplo, eu vou colocar assim, oh,
+
+    <style>
+
+        .esconde {
+            display: none;
+        }
+    </style>
+
+    , okay? Entao, agora, eh so adicionar essa classe aqui,
+
+    <button id="botao-clique-aqui" type="button" class="btn btn-success btn-lg esconde">Clique aqui</button>
+
+    , beleza? Se eu der um Refresh aqui na Pagina HTML, o botao eh para sumir.
+
+    9. Beleza, o botao nao esta aparecendo. Agora, vamos la, vamos fazer esse botao aparecer depois de alguns segundos.
+
+    10. Ver temporizadores.js.
+
+
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Temporizadores</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <style>
+        body {
+            padding: 20px;
+        }
+        .esconde {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class=text-center>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/MsUhkKopZO4?autoplay=1" frameborder="0" allowfullscreen></iframe>
+    </div>
+    <div class="text-center">
+        <button id="botao-clique-aqui" type="button" class="btn btn-success btn-lg esconde">Clique aqui</button>
+    </div>
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="temporizadores.js"></script>
+</body>
+</html>

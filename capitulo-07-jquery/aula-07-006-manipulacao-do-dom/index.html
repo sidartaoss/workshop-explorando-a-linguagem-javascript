@@ -1,0 +1,53 @@
+<!-- 
+
+    Aula 07.006. Manipulando o DOM
+
+    1. Vamos manipular o DOM, agora, via Javascript, com jQuery. O que que eu quero fazer aqui? Eu quero carregar esse combo aqui com os dados que voltaram do Servidor. A gente ja buscou tudo isso daqui, que nos vemos no Console do Chrome DevTools, eu quero atualizar aqui, nao eh, nesta tela, colocando o nome aqui na frente e o valor do option desse selection como a UF de cada estado, okay? Essa eh a ideia que nos vamos fazer agora.
+
+    2. A gente ja viu, nao eh, um pouco de manipulacao de DOM's, em outras aulas, quando a gente estava, quando a gente adicionou classe CSS, isso ja eh uma manipulacao do DOM, a gente trabalhou no DOM alterando ele.
+
+    3. E isso eh bem legal, por que? Porque, com o Javascript, entao, eu consigo atualizar, alterar, criar novos elementos na tela, aqui, eu consigo ir adicionando coisas novas, posso fazer aparecer uma caixinha nova aqui, nao eh, posso fazer quase qualquer coisa aqui na tela com o Javascript, beleza? 
+
+    4. Entao, eh isso que eu quero fazer, eu quero criar options e inserir dentro desse combo, beleza? A gente ja esta aqui com os objetos sendo retornados do Servidor, okay?, o que que eu preciso fazer aqui, entao?
+
+    5. Ver aquivo ajax-e-promises.js.
+
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ajax e Promises</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <style>
+        body {
+            padding: 20px;
+        }
+    </style>    
+</head>
+<body>
+    <div class="panel panel-default">
+        <div class="panel-heading">Estado e Cidade</div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label for="">Estado</label>
+                        <select id="combo-estado" class="form-control">
+                            <option value="MG">Minas Gerais</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label for="">Cidade</label>
+                        <select id="combo-cidade" class="form-control" disabled></select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+    <script src="ajax-e-promises.js"></script>
+</body>
+</html>

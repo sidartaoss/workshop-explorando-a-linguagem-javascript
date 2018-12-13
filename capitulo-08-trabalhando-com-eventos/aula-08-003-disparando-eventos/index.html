@@ -1,0 +1,56 @@
+<!-- 
+
+    Aula 08.003. Disparando Eventos
+
+1. Vamos ver aqui, um exemplo de como nos podemos usar eventos customizados tambem.
+
+2. Qual que eh a ideia que o instrutor teve aqui para nos explicar isso? 
+
+3. Eu vou ter um campo de entrada aqui, onde eu vou digitar, por exemplo, uma tarefa concluida, uma pessoa precisa fazer uma determinada tarefa do dia, ele tem que entrar e tudo que ele for fazendo, ele tem que ir registrando, aqui.
+
+4. Eh logico que esta bem simples, para a gente focar no exemplo mesmo.
+
+5. Qual que eh a ideia, entao? Eu vou digitar, aqui, vamos supor que a primeira tarefa do dia, assim, oh, 'Eu cheguei no trabalho e, ai, a primeira coisa que eu tenho que fazer eh responder os e-mails.
+
+6. Entao, eu vou escrever, alguma coisa assim, 'E-mails respondidos' e, ai, eu vou dar um <Enter> aqui, ainda nao esta implementado.
+
+7. Quando eu der um ,Enter> aqui, aqui do lado vai aparecer uma listinha com tudo que for digitado, o que eu digitei no campo vai ter que sair daqui, e aparecer aqui em uma lista do lado. E vai ficar entrando um abaixo do outro aqui.
+
+8. Okay? Ai, logico, nao eh?, so vai fazer isso daqui, mas imagina isso em um sistema completo, com acesso a banco de dados, etc., voce poderia mandar essa lista para o servidor, salvar no banco de dados, ter um botao para limpar, ou seja, um sistema todo. A ideia eh o instrutor nos mostrar os eventos customizados aqui, um evento customizado que nos vamos fazer.
+
+9. Okay? Entao, olha so, a pagina html aqui eh muito simples, ela so tem aqui as div's, oh, tem o input, que o input eh a atividade concluida, nao eh?, e tem aqui um div logo do lado com a lista de atividades.
+
+10. Entao, eu tenho uma atividade e, ao lado, a lista. Vamos implementar aqui o Javascript?
+
+11. Ver arquivo disparando-eventos.js.
+
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Disparando eventos</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <style>
+        body {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="row">
+    <div class="col-md-2">
+        <div class="form-group">
+            <input type="text" id="atividade">
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="form-group">
+            <ul id="lista-atividades">                
+            </ul>
+        </div>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="disparando-eventos.js"></script>
+</body>
+</html>

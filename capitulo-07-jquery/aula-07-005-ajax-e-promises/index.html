@@ -1,0 +1,102 @@
+<!-- 
+
+    Aula 07.005. Ajax e Promises
+
+    1. Vamos falar, agora, sobre AJAX e Promises, comecar a implementacao aqui dessa telinha que o instrutor criou para nos mostrar.
+
+    2. Olha so, o instrutor criou aqui, tem dois combos aqui, como nos podemos ver, o combo Estado e o combo Cidade, que esta desabilitado.
+
+    3. A ideia eh, quando eu estiver carregando a aplicacao, eu vou carregar esse combo estados aqui. Eu coloquei um fixo aqui, esta no HTML, esse aqui, Minas Gerais, fixo. Mas, quando a gente tiver carregando aqui a pagina, a gente vai via Ajax buscar os Estados noi Servidor.
+
+    4. Okay? Essa eh a ideia.
+
+    5. Que Servidor eh esse, Normandes? 
+
+    6. O instrutor criou, aqui, uma aplicacaozinha bem simples, para ja retornar isso para a gente, que nao eh o objetivo a gente ficar fazendo isso aqui no Workshop.
+
+    7. Eh essa aqui oh, alga.works/ws-js-localidades, dando um <ENTER> aqui, ele vai baixar o arquivo, localidades-1.0.0.jar, eh so nos baixarmos esse arquivo JAR.
+
+    8. Com o Java instalado, ja estamos aqui no terminal, com o Java instalado, qual versao do Java? java -version, tem que ser na versao >= 8 do Java, abaixo da versao 8 nao vai dar certo, okay?
+
+    9. Entao, nos vamos digitar: java -jar e o nome aqui do JAR,
+
+    > cd C:\Users\SEMPR\Downloads
+    C:\Users\SEMPR\Downloads> java -jar localidades-1.0.0.jar
+
+    10. Esse carinha aqui vai inicializar a aplicacao, aqui um servidorzinho, gasta uns 5 segundos para fazer isso, ja subiu, 6 segundos para iniciar a aplicacao.
+
+    11. Entao, como ela funciona? Se eu digitar aqui oh, http://localhost:8080/estados, por exemplo, der um GET nisso, ele vai trazer os estados que eu cadastrei, sao todos os estados do Brasil? Nao, o instrutor cadastrou 3 estado ali, esta fixo mesmo, no codigo. Ah, Normandes, quaql que eh o codigo? Eu consigo dar uma olhada?
+    
+    12. Consegue, eh http://github.com/algaworks/workshop-javacript-localidades. Esse eh o codigo-fonte que o instrutor utilizou, uma aplicacaozinha com Spring Boot aqui para retornar isso aqui, 
+
+    [{"codigo":1,"uf":"MG","nome":"Minas Gerais"},{"codigo":2,"uf":"SP","nome":"São Paulo"},{"codigo":3,"uf":"GO","nome":"Goiás"}]
+
+    13. Ta la, se eu digitar o GET estados, ele vai me retornar todos os estados cadastrados e, se eu fizer em cidades, passando uf=MG, por exemplo, ele vai trazer as cidades de Minas Gerais,
+
+    [{"codigo":1,"nome":"Uberlândia"},{"codigo":2,"nome":"Belo Horizonte"},{"codigo":3,"nome":"Ouro Preto"}]
+
+    , nao todas, como o instrutor ja disse, algumas.
+
+    14. De Sao Paulo, http://localhost:8080/cidades?uf=SP, 
+
+    [{"codigo":4,"nome":"Santos"},{"codigo":5,"nome":"Ribeirão Preto"}]
+
+    , retorna duas cidades de SP.
+
+    15. Ah, vou passar aqui Espirito Santo, ES, http://localhost:8080/cidades?uf=ES, o instrutor nao implementou todos os estados, entao, vai dar um erro, vai falar: UF nao existente ou nao mapeada, use apenas MG, SP, ou GO.
+
+    16. Como o objetivo, aqui, eh o instrutor nos mostrar os combos funcionando, o instrutor colocou so alguns estados e cidades la, okay?, nao tem todos os estados aqui nao.
+
+    17. Beleza? Entao, vamos la, MG, SP, ou GO, entao, http://localhost:8080/cidades?uf=GO, tambem vai funcionar,
+
+    [{"codigo":6,"nome":"Goiânia"},{"codigo":7,"nome":"Rio Verde"}]
+
+    18. Okay? Entao, vamos dar uma olhada agora aqui na pagina, no html, que o instrutor criou, okay? Comeca importando o Bootstrap, coloca, aqui, um padding, ai, o panel-default, o panel-heading, para aparecer o Estado e Cidade.
+
+    19. No panel-body, eu estou usando aqui Bootstrap, e, olha so, na primeira posicao, coloquei Estado, um combo-estado, que esta fixo, Minas Gerais, option aqui Minas Gerais, e, logo depois, um outro combo, um outro select, eu chamei de combo-cidade, okay?, que esta desabilitado. 
+
+    20. Nos vamos comecar, nesta aula, a implementacao, nos ja vamos carregar, aqui, via Ajax, e ir fazendo log.
+
+    21. Depois, a gente manipula o DOM, e faz isso aparecer na tela. Depois, a gente vai melhorando, e melhorando, beleza? E assim vai.
+
+    22. Vamos la, oh, o Javascript esta zeradinho, aqui. Ver o arquivo ajax-e-promises.js.
+
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ajax e Promises</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <style>
+        body {
+            padding: 20px;
+        }
+    </style>    
+</head>
+<body>
+    <div class="panel panel-default">
+        <div class="panel-heading">Estado e Cidade</div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label for="">Estado</label>
+                        <select id="combo-estado" class="form-control">
+                            <option value="MG">Minas Gerais</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label for="">Cidade</label>
+                        <select id="combo-cidade" class="form-control" disabled></select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+    <script src="ajax-e-promises.js"></script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!-- 
+
+    Aula 06.004. Objeto Window
+
+ 1. O instrutor vai nos falar sobre o objeto Window e sobre e mais sobre escopo global tambem.
+
+ 2. Ver arquivo total.js.
+
+
+ -->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <title>Debug com Developer Tools</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <style>
+        body {
+            padding: 20px;
+        }
+    </style>
+    </head>
+    <body>
+        <div class="panel panel-default">
+            <div class="panel-heading">Cálculo valor total</div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="">Valor</label>
+                            <input type="text" class="form-control" id="valor">
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="">Valor total</label>
+                            <p class="form-control-static" id="total">0</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="total.js"></script>
+    </body>
+</html>

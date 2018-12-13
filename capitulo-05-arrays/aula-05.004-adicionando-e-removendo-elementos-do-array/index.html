@@ -1,0 +1,150 @@
+<!-- 
+
+    Aula 05.004. Adicionando e Removendo Elementos do Array
+
+1. O instrutor vai nos mostrar, agora, com a gente consegue adicionar elementos dentro de um array e remover elementos dentro desse array.
+
+2. Nos vamos ver quatro funcoes da API do array aqui, para a gente faze isso, vamos ver que interessante.
+
+3. Entao, vamos la, vamos criar aqui, imagine-se que nos tenhamos la uma lista de emails, o usuario esta digitando uma lista de emails ali para cadastrar, alguma coisa assim, e nos pegamos isso via javascript, ja temos alguma coisa la, ele ja comecou a digitar, enfim, ou entao, o array comecou com 0 elementos, so que nos carregamos a pagina, nos criamos esse array de emails vazio,
+
+>var emails = []
+
+> emails
+
+, retorna [], entao, emails eh um array vazio,
+
+>emails.length
+
+, retorna 0, ou seja, tem 0 elementos dentro desse array.
+
+4. Como eh que nos fazemos para colocar elementos dentro desse array? Nos podeiamos acessar aqui, na posicao 0, 
+
+> emails[0]
+
+, mas ai, imagina, ne, ficar colocando isso aqui, nao tem uma forma mais facil?
+
+5. Tem. O instrutor ja nos disse que a API do array eh bem rica, tem muita funcao para fazer muita coisa, e uma delas, e eh bem usada, eh o push(),
+
+>emails.push()
+
+, com o push(), nos conseguimos colocar elementos dentro desse array. 
+
+6. Entao, vamos colocar la o joao@email.com,
+
+>emails.push('joao@email.com')
+
+, retornou 1, ou seja, ele vai retornar o novo tamanho do array.
+
+7. Entao, olha la, o tamanho, agora, eh 1. Se nos mandarmos imprimir aqui,
+
+> emails
+
+, retorna: [ 'joao@email.com' ], ou seja, esta o joao la dentro.
+
+8. Queremos colocar mais um elemento, vamos colocar 'maria@email.com'
+
+>emails.push('maria@email.com')
+
+, vai retornar 2,
+
+>emails
+
+, retorna: [ 'joao@email.com', 'maria@email.com' ]
+
+9. Okay?
+
+10. Uma coisa antes de o instrutor falar sobre remover elementos, uma coisa interessante. O push, ele adiciona sempre no fim do array, vamos colocar mais um elemento aqui, vamos colocar o 'jose@email.com',
+
+> emails.push('jose@email.com')
+
+, ele vai colocar ele na posicao depois do ultimo elmento, entao, no caso aqui, 0, 1, ele vai colocar na posicao 2, e vai retornar 3 porque o array passou a ter 3 elementos, okay?,
+
+> emails.push('jose@email.com')
+
+, retorna 3,
+
+> emails
+
+, retorna: [ 'joao@email.com', 'maria@email.com', 'jose@email.com' ], o jose entrou aqui, na ultima posicao. 
+
+11. Okay? O push faz isso.
+
+12. E como nos fazemos para remover? 
+
+13. Nos podemos remover o emails com pop(), so usar essa funcao pop().
+
+14. A funcao pop(), ela vai pegar o ultimo elemento dentro do array, remover ele do array, e nos retornar ele,
+
+> emails.pop()
+
+, entao, quando nos dermos o <ENTER> aqui, isso aqui vai ser retornado, vai aparecer descrito aqui embaixo do console, o 'jose@email.com' foi retornado.
+
+15. E o array, agora, tem so dois elementos,
+
+> emails
+
+, retornou: [ 'joao@email.com', 'maria@email.com' ], tem so o joao e a maria, ele remove sempre o ultimo elemento o metodo pop().
+
+16. Entao, o push() adiciona um novo elemento no array, no final dele, e o pop() remove sempre o ultimo elemento do array e nos devolve esse elemento, okay?
+
+17. Entao, se nos quisessemos pegar esse ultimo elemento 'jose@email.com' e colocar em uma variavel, sem problema, eh so declarar uma variavel aqui antes do pop,
+
+>var e = emails.pop()
+
+, por exemplo. Se nos mandarmos imprimir o e agora, vai ser 'maria@email.com'
+
+> e
+
+, retorna 'maria@email.com', okay? Porque foi a ultima posicao ali. 
+
+> emails
+
+, retorna: [ 'joao@email.com' ], estamos com 1 email apenas ali.
+
+18. Bom, o instrutor nos mostrou que o push coloca no ultimo, e o pop remove o ultimo. 
+
+19. E a gente tem, agora, mais dois metodos. E se nos quisermos inserir no inicio do array?
+
+20. As vezes, nos podemos ter uma logica que precisa fazer isso, nos queremos falar, Ah, eu quero adicionar os emails aqui na ordem, mas nos estamos criando uma lista de itens de uma tabela, e, ai, nos falamos, Nao, eu quero que o ultimo elemento que for adicionado seja o primeiro no meu array, alguma coisa assim.
+
+21. Entao, existe uma funcao para a gente fazer isso, que eh o unshift(),
+
+>emails.unshift
+
+, o unshift eh o push, so que invertido, ele vai adicionar na frente. Entao, oh, se nos mandarmos colocar, aqui, o email do pedro@email.com, ele vai colocar, oh, ele vai retornar o tamanho do array, so que, agora, quando nos mandarmos mostrar, nos vamos ver que o pedro vai estar na frente do joao,
+
+>emails.unshift('pedro@email.com')
+
+> emails
+
+, retornou: [ 'pedro@email.com', 'joao@email.com' ], tah la, o pedro, agora, esta na frente do joao.
+
+22. E existe, tambem, uma forma de remover o primeiro?
+
+23. Sim. Ao inves de ser unshift, eh o shift,
+
+> emails.shift()
+
+, o shift() remove sempre o primeiro elemento do array e nos devolve ele.
+
+24. Entao, quando nos dermos um <ENTER> aqui,
+
+> emails.shift()
+
+, ele vai imprimir o pedro@email.com.
+
+25. E o array, agora, tem so o joao@email.com,
+
+> emails
+
+, retorna: [ 'joao@email.com' ]
+
+26. Entao, devemos lembrar desses 4 metodos aqui, que eh o push(), as 4 funcoes, o pop(), o unshift(), e o shift().
+
+27. Sao 4 funcoes da API do array do javascript que sao bem uteis.
+
+28. Nos, com certeza, vamos usa-las em algum momento da nossa vida como programador Javascript.
+
+29. Fim da Aula 05.004. Adicionando e Removendo Elementos do Array.
+-->

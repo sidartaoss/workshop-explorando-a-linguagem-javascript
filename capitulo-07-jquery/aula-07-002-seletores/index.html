@@ -1,0 +1,79 @@
+<!-- 
+
+    Aula 07.002. Seletores
+
+ 1. Para o instrutor nos falar sobre seletores, vejamos o exemplo que o instrutor criou aqui.
+
+ 2. Imaginemos que nos temos uma tabela e, nessa tabela, nos queremos fazer o seguinte. Existe, aqui, no canto esquerdo, um checkbox para selecionarmos cada uma dessas linhas. A ideia aqui seria o seguinte, nos poderiamos selecionar varias linhas, fazer, aqui, um campo de multi-selecao de linhas, onde nos poderiamos, vamos supor que fossem faturas, nos poderiamos selecionar as faturas que nos queremos e clicar em um outro botao e, ai, nos poderiamos ter um botao aqui embaixo que estaria escrito RECEBER, ou CANCELAR, no caso de usuarios, aqui pensando, em um usuario de um sistema, poderia selecionar varias linhas aqui e ativar/desativar esses usuarios.
+
+ 3. Enfim, o que o instrutor quer fazer eh os checkboxes funcionarem com o jQuery, manipulando, ja, selecionando esses elementos, como eh que isso vai funcionar?
+
+ 4. O instrutor vai nos mostrar, aqui, agora, devagarzinho. A ideia, entao, eh, para o checkbox que esta no topo, no heading da tabela, se nos pensarmos bem, quando nos clicamos nele, a ideia eh que nos cliquemos nele e ele selecione todo mundo aqui para baixo.
+
+ 5. Se nos clicarmos nele desmarcando, tem que desmarcar todo mundo aqui para baixo.
+
+ 6. Se nos selecionarmos todo mundo aqui, ou seja, todos os checkboxes, o checkbox de cima, no heading, tem que ficar selecionado tambem.
+
+ 7. Ai, nos desmarcamos um checkbox e, ai, desmarca o checkbox no heading tambem. Essa eh a ideia neste sistema aqui, que o instrutor quer fazer conosco agora.
+
+ 8. O html o instrutor ja deixou pronto aqui, eh uma pagina bem simples, com uma tabela, okay?, tem uma tabelinha, uma tabela simples, tem o head da tabela, na primeira posicao ja do head, o instrutor colocou ja um input checkbox. Depois, para cada linha do body da tabela, o instrutor colocou um checkbox na primeira coluna sempre.
+
+ 9. Bom, aqui, embaixo, declaramos o jQuery, okay?, entao, usando o CDN, vamos colocar o CDN, ao inves de baixar aqui, como nos vamos usar em varios outros exemplos, nao eh, para nao ter que ficar baixando toda hora e colando dentro de cada pasta aqui das aulas, nos vamos usar o CDN.
+
+ 10. Okay? E, depois, vamos criar o arquivo seletores.js, como esta aula eh de seletores, nos vamos criar um arquivo com o nome de seletores.js,
+
+ <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+ <script src="seletores.js"></script>
+
+ 11. Normandes, eu posso inverter? Carregar primeiro seletores e, depois, o jQuery?
+
+ 12. Nao. Por que nao? Porque, aqui dentro de seletores.js, nos vamos usar o jQuery. Se nos vamos usar o jQuery aqui dentro de seletores.js, nos precisamos que ele ja esteja carregado. Entao, a ordem aqui faz diferenca, nos precisamos do jQuery primeiro, porque nos vamos usar aqui, jQuery. Se nao fossemos usar nada de jQuery aqui, ai, tudo bem, ai, poderia inverter. Mas, como nos vamos usar jQuery, vamos deixar assim. Okay?
+
+ 13. Vamos la, vamos no codigo Javascript, devagarzinho.
+
+ 14. Ver o arquivo seletores.js.
+
+
+-->
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <title>Seletores</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        <style>
+            body {
+                padding: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th><input type="checkbox" id="selecao-todos-usuarios"></th>
+                    <th>Nome</th>
+                    <th>E-mail</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="checkbox" class="js-selecao-usuario"></td>
+                    <td>Ricardo</td>
+                    <td>ricardo@email.com</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="js-selecao-usuario"></td>
+                    <td>Sarah</td>
+                    <td>sarah@email.com</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="js-selecao-usuario"></td>
+                    <td>Manoel</td>
+                    <td>manoel@email.com</td>
+                </tr>
+            </tbody>
+        </table>
+        <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+        <script src="seletores.js"></script>
+    </body>
+</html>

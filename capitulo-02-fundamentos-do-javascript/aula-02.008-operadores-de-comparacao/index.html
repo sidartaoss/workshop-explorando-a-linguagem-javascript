@@ -1,0 +1,125 @@
+<!-- 
+
+    Aula 02.008. Operadores de Comparacao
+
+1. Operadores de comparacao, vamos la que alguns sao os classicos,
+sao bem faceis, e, depois, o instrutor mostrara um segredinho
+que existe na comparacao com javascript.
+
+2. Eh muito importante acompanharmos esse finalzinho.
+
+3. O instrutor ira comecar pelo basico, mas, mesmo que ja saibamos
+nos devemos fica ate o finalizino para aprendermos a diferenca do 
+== e do ===.
+
+4. Vamos comecar pelo simples aqui, 10 eh maior do que 4?,
+
+>10 > 4
+
+, sim, entao, da true. 10 eh menor do que 4?,
+
+>10 < 4
+
+, nao, da false. 10 eh maior do que 10?,
+
+>10 > 10
+
+, nao, da false. Mas 10 eh maior ou igual a 10?,
+
+>10 >= 10
+
+, sim, da true. Da mesma forma que 10 eh menor ou igual a 10?,
+
+>10 <= 10
+
+, sim, da true. Entao, maior ou igual ou menor ou igual sao bem simples
+para a gente trabalhar.
+
+5. Agora, vamos ver o operador de comparacao, queremos saber se eh 
+igual ou diferente, entao, olha so, 10 eh igual/igual a 10?
+
+>10 == 10
+
+, queremos saber se os dois valores sao iguais, vai retornar true. Isso
+server para uma string tambem. Se colocarmos,
+
+>'AlgaWorks' == 'AlgaWorks'
+
+, da true, ele vai comparar as strings tambem. Entao, igual/igual, a gente 
+comeca a pensar que eh o cara ideal para a gente comparar.
+
+6. Porem, existe, ai, um segredinho, uma pegadinha ai que pode nos
+atrapalhar, por exemplo, 10 eh igual/igual a '10', uma string 10? 
+
+>10 == '10'
+
+7. Vamos fazer diferente aqui, 
+
+>var x = 10;
+
+>typeof x
+
+, eh um 'number'. 
+
+>var y = '10'
+
+, uma string.
+
+>typeof y
+
+, eh uma string.
+
+8. E vamos fazer o seguinte, x == y?,
+
+>x == y
+
+, ou seja, estamos comparando um tipo number com um tipo string. Isso
+daqui vai retornar true.
+
+9. Okay? Entao, isso pode ser estranho, pode ser um comportamento 
+estranho do Javascript, compararmos um tipo number com um tipo string,
+e isso da true.
+
+10. Entao, o que que os caras pensaram? o que que eles fizeram para 
+facilitar essa comparacao?
+
+11. Se compararmos, entao, x, e y, um number com uma string, se nos 
+ussarmos igual/igual/igual, ===, ele vai comparar o tipo tambem.
+
+12. Entao, se compararmos o 10 string com os tres sinais de iguais,
+ele vai retornar false., porque ele vai verifica o tipo de x, qual que 
+eh? Number. E o tipo de y, eh string: Opa, sao diferentes, entao, 
+isso aqui ja eh false, nao vai tentar converter ninguem.
+
+13. A mesma coisa para diferente. Se pegarmos, aqui, 
+
+>10 != '10'
+
+, so com um igual, ele vai falar que eh false.
+
+, ou seja, que os dois seriam iguais. 
+
+14. Mas,
+
+10 !== '10'
+
+? Ai, ele vai retornar true. Okay? Entao, o mais correto para 
+se utilizar eh esse com dois iguais. 
+
+15. O instrutor utiliza muito mais o 3 iguais, ===, e esse 
+diferente de dois iguais, !==, do que o == e o !=.
+
+16. Esse aqui, ===, !==, eh o mais recomendado, a nao ser que seja
+um caso bem especifico que estejamos fazendo, mas, o que que eh
+importante aqui? 
+
+17. nos pensarmos e entendermos que esse cara, ===, !==, compara os
+tipos tambem. Isso eh mjito importante quando estivermos programando,
+porque, as vezes, nos podemos estar usando la igual/igual, ==, e falar,
+poxa, mas, por que que esta dando igual? Era para dar diferente. E, as
+vezes, era simplesmente o tipo ali do dado, do objeto, ou da variavel,
+se era string, ou se era number.
+
+18. Fim da Aula 02.008. Operadores de Comparacao
+
+-->

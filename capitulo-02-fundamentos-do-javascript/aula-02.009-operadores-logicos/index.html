@@ -1,0 +1,217 @@
+<!-- 
+
+    Aula 02.009. Operadores Logicos
+
+1. Vamos conversar, agora, sobre os operadores logicos, que eh o || e o 
+&&, sao os mais comuns que a gente utiliza.
+
+2. Entao, vamos supor que teriamos uma variavel la,
+
+>var ativo = true;
+
+, que vai retornar para nos true, se o usuario eh ativo, e, se o usuario
+eh administrador,
+
+>var administrador = false;
+
+, por exemplo, alguma coisa assim.
+
+
+3. Entao, nos teriamos algum if para verificar alguma regra, para
+verificar algo do tipo, se o usuario eh ativo e eh administrador,
+nos queremos fazer alguma coisa, queremos mostrar alguma coisa na tela.
+
+4. Entao, nos poderiamos, se o usuario eh ativo e eh administrador,
+
+>ativo && administrador
+
+, entao, vamos fazer alguma coisa. Esse 'entao fazer alguma coisa' eh 
+retornar um boolean para nos decidirmos, se eh true ou false.
+
+5. Entao, o &, e comercial, vai verificar: os dois tem que se true para
+dar true este resultado.
+
+6. Neste caso aqui, como o administrador eh false, entao, o resultado
+disso sera false, independente da ordem.
+
+7. 
+
+>administrador && ativo
+
+, vai continuar dando false, porque o administrador esta false.
+
+8. Se nos quisessemos fazer o contrario, quisesse descobrir, ele precisa
+ser um ou outro,
+
+> ativo || administrador
+
+, entao, usamos sempre dois, reparemos que o instrutor colocou dois &'s
+comerciais, &&, e, aqui, dois pipes, ||.
+
+9. Entao, eh usuario ativo e administrador? Ele esta ativo, nao precisa
+ser administrador, mas so se eh usuario ativo para nos mostrarmos alguma
+coisa na tela, entao, retornou true.
+
+10. Onde que usaremos isso? Dento de um if, por exemplo, 
+
+>if (ativo || administrador) {
+    console.log('mostro algo na tela');
+}
+
+11. Okay? Eh isso que poderiamos fazer com esses carinhas.
+
+12. Normandes, por que dois? E se colocarmos com apenas um e comercial, &, 
+ou apenas um pipe, |?
+
+13. Ai, vamos la. Vamos lembrar, inclusive, como a gente faz para deduzir
+esses resultados olhando o valor binario deles. A gente vai aplicar essa
+operacao no valor binario do dado.
+
+14. Entao, vamos la. Nos temos, aqui, o ativo,
+
+>ativo
+
+, retornando o valor true, e o administrador,
+
+>administrador
+
+, retornando o valor false. Entao, um esta true e o outro esta false.
+
+15. Se fizermos: 
+
+>ativo | administrador
+
+, usando somente um pipe, vejamos o que ele vai retornar. Vai retornar 
+true ou false?
+
+16. Eh para retornar true, seria para retornar true, so que nao vai
+retornar true, vai retornar algo que representa true, mas nao eh o 
+true, ele vai retornar 1.
+
+17. 1 eh true, certo? Se nos pegarmos duas exclamacoes na frente do 1,
+eh true,
+
+>!!1
+
+, retorna true, mas ele retornou true, ao inves de retornar true e
+false.
+
+18. Diferente, se colocarmos, aqui, dois pipes, ||
+
+>ativo || administrador
+
+, ele retorna true direto, um tipo true.
+
+19. Se colocarmos, 
+
+>ativo & administrador
+
+, tem que retornar false, mas ele nao vai retornar false, vai retornar
+algo que representa false, que eh o zero.
+
+20. Ueh, Normandes, por que? Ai que a gente vai dar uma lembradinha
+a respeito da comparacao para aplicar esse operador nos valores 
+binarios.
+
+21. Antes de o istrutr mostrar la, vejamos so, so para ficarms curiosos,
+olha so o que isso vai dar,
+
+>10 | 1
+
+, da 11. 
+
+22. 
+
+> 10 & 1
+
+, isso aqui da 0. Como assim, Normandes? Que doideira.
+
+23. Vamos lembrar la, as vezes, se fizemos faculdade, provavelmente, nos
+vimos isso, senao, daremos uma olhadinha, que eh bem interessante,
+a comparacao, aplicar o OR e o AND em valores binarios.
+
+24. Vamos dar uma olhada aqui no slide.
+
+25. Vamos pegar o 10. A representacao do 10, em binario, em valores 
+binarios, eh essa aqui, 1010. Por que 1010? Se nos formos estudar la, 
+nos vamos ver que esse cara aqui, no computador, no fundo, tudo eh
+zero e um. Entao, para representar o numero, existe, em binario, essa
+eh a representacao. E, ai, os quatro ultimos, eh sempre 8, 4, 2, 1,
+que representa, e a gente soma onde em 1.
+
+26. Entao, para 1010, vamos somar 8 + 0, o segundo numero seria
+4 se tivesse 1, mas, como eh zero, conta como zero, entao, 8 + 0 + 2, 
+que soma 10. E, por ultimo, como nao tem nada, eh zero, entao, continua 
+zero. Fica, entao, 8 + 0 + 2 + 0, que reslta em 10.
+
+27. Entao, o valor 10, em binario, eh esse o valor aqui.
+
+28. E nos queremos o valor 1. O valor 1 eh sempre simplesmente o 1 aqui
+no final. Eh 8, 4, 2, 1,
+
+8 4 2 1
+1 0 1 0
+
+, se tem o valor 1 aqui, 
+
+10 = 1010  OR
+ 1 =    1
+
+, entao, nos somamos o valor 1. 
+
+29. Entao, nos vamos aplicar, agora, o OR, a operacao OR aqui. O OR 
+faz o seguinte, entre 0 OR 1, se tiver, qualquer um dos dois, se tiver
+um deles que eh 1, coloca 1 como resultado,
+
+10 = 1010  OR
+ 1 = 0001
+
+, 1 OR 0, vai ser 1. 0 OR 0 vai ser 0. 1 OR 0 vai ser 1, 
+embaixo, completaria tudo com zeros, 0 OR 1 eh 1. 1 OR 0 eh 1. 
+0 OR 0 eh 0. 1 OR 0 eh 1. Entao, o resultado disso aqui seria 1011.
+
+30. Convertendo esse numero aqui de volta para numero decimal,
+
+8 4 2 1
+1 0 1 1
+
+, 8 + 2 + 1, que eh igual a 11, por isso que vai dar o valor 11 entre 
+10 | 1, vai dar 11.
+
+31. E 10 & 1? Vamos ver?
+
+10 = 1010  AND
+ 1 =    1
+
+, vamos colocar o 10 e 1 e vamos aplicar a operacao AND. O AND ja
+funciona assim, os dois tem que ser 1 para dar 1,
+
+10 = 1010  AND
+ 1 = 0001
+
+, entao, 0 AND 1 vai dar 0. 1 AND 0 vai dar 0. 0 AND 0 vai dar 0. 
+1 AND 0 vai dar 0, ou seja, todo mundo aqui deu zero,
+
+10 = 1010  AND
+ 1 = 0001
+     0000
+
+32. Entao, 10 & 1 vai dar 0.
+
+33. Por isso que esse cara aqui, 
+
+>10 & 1
+
+, deu zero. 
+
+34. Qual que eh a moral da historia aqui? Nao eh explicar sobre essas
+operacoes binarias ai. A moral da historia eh, a nao ser que queiramos
+fazer esses calculos binarios, em que haja algum motivo forte para isso
+no nosso codigo, sempre devemos utilizar dois pipes, ||, ou os dois
+e's comerciais, &&, para nos podermos fazer a nossa comparacao booleana
+certinha.
+
+35. Fim da Aula 02.009. Operadores Logicos.
+
+
+-->

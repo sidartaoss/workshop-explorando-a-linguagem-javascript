@@ -1,0 +1,332 @@
+<!-- 
+
+    Aula 02.004. Tipo String
+
+1. Vamos falar, agora, sobre o tipo String, que eh bem importante, 
+bem poderoso no Javascript.
+
+2. Vamos ver, primeira coisa, como a gente criar uma String. Entao, vamos
+la, vamos declarar, aqui, uma variavel 
+
+var x = 'AlgaWorks';
+
+3. x eh uma String. Nos podemos, entao, declarar com aspas simples. 
+Reparemos uma diferenca do Java, no Java, aspas simples eh para 
+caracter. No Javascript, aspas simples, nos declaramos uma String,
+mesmo porque nao existe o tipo car no Javascript, eh o tipo String. Entao,
+se nos fizermos,
+
+typeof x
+
+, vai retornar o tipo string.
+
+4. Mas nos tambem podemos usar, se nos quisermos, aspas duplas, 
+
+var y = "AlgaWorks";
+
+, y retorna 'AlgaWorks', e typeof y retorna 'string'.
+
+5. Bom, Normandes, qual a diferenca de nos usarmos, entao, aspas 
+simples e aspas duplas? 
+
+6. Nao tem diferenca nao, nos podemos usar uma ou outra, tem gente que
+prefere aspas simples, tem gente que prefere aspas duplas.
+
+7. O instrutor prefere aspas simples, o instrutor acostumou ha algum
+tempo ja a usar aspas simples, e esta usando ate hoje.
+
+8. Mas uma coisa que o instrutor recomenda muito, e o instrutor acha que 
+deixa o nosso codigo mais organizado e mais bonito, eh: se nos preferirmos
+usar aspas simples, deve-se usar sempre aspas simples naquele projeto, 
+aquele seu arquivo Javascript. Nao deve-se ficar trocando nao, comeca
+com aspas simples, depois, vai para aspas duplas, e vice-versa, imagine-se
+que confusao, nos olhamos em uma linha, tem uma string com aspas simples,
+na linha debaixo, eh uma string com aspas duplas. o instrutor acha ue
+deixa o codigo muito feio assim.
+
+9. Entao, o instrutor nao recomenda ess pratica, comecou com um, vai
+com ela ate o fim. 
+
+10. Na string, existem, tambem, varias funcoes que a gente ode usar
+que a gente vai ver algumas delas aqui. Tem tambem a propriedade
+length, paa a gente descobrir o tamanho de uma string.
+
+11. Entao, nos queremos saber quantos caracteres tem na palavra 
+'AlgaWorks', nos vamos usar a propriedade length,
+
+x.length
+
+, eh propriedade, entao, nos nao abrimos e fechamos parenteses, termina aqui
+desse jeito, 
+
+x.length
+
+, ou poe ponto e virgula
+
+x.length;
+
+, retornou 9, que eh o numero de caracteres. se nos tentarmos abrir
+e fechar parenteses, vai dar um erro, porque length nao eh uma funcao,
+eh uma propriedade, entao, isso aqui 
+
+x.length();
+
+
+, vai dar errado.
+
+12. Okay? Como eh que fazemos para comparar duas strigs? Entao, vamos la,
+isso nos vamos ver, inclusive, mais para frente, quando a gente for
+ver operadores de comparacao, o instrutor tem um segredinho aqui, nos
+operadores == e tem um operador ===.
+
+13. Entao, o instrutor vai nos mostrar como eh o recomendado comparar as 
+strings. 
+
+14. Entao, vamos la, nos temos a string a, em que vamos colocar 'AlgaWorks',
+
+var a = 'AlgaWorks';
+
+, nos temos a string b, que vamos atribuir 'AlgaWorks' tambem, 
+
+var b = 'AlgaWorks';
+
+, e como eh que nos comparamos as duas?
+
+15. a === b retorna true,
+
+16. se nos colocarmos a == b, vai dar true tambem. Mas, como o instrutor
+disse, ele vai nos mostrar la na frente quais a diferenca maior entre
+esses daqui? 
+
+17. Mas, a principio, devemos nos lembrar que usar os 3 iguais vais ser
+melhor para nos. La na frente, o instrutor vai nos explicar porque.
+
+18. Entao, assim, a gente compara a string. Como nos descobrimos qual 
+eh o indice de uma determinada palavra, de um determinado caracter
+dentro de uma string?
+
+19. Entao, vamos colocar aqui, uma mensagem, 
+
+var m = 'Seja bem-vindo a AlgaWorks'
+
+, por exemplo, e nos queremos saber qual eh o indice, porque uma 
+string eh uma cadeia de caracters, entao,
+a string comeca na posicao 0. Nos queremos saber, por exemplo,
+qual indice cvomeca a palavra 'vindo'? 
+
+20. A gente contando aqui na mao deu 9, entao, se nos fizermos, 
+m.indexOf('vindo'), vejamos so, retornou 9, ou seja, comeca a partir do
+caracter 9 dentro dessa string.
+
+21. Tem tambem o m.lastIndexOf, porque, se nos formos colocar aqui,
+
+m.indexOf('a')
+
+, por exemplo, e tem varias letras 'a' nessa string, que retorna 3, 
+que eh a primeira letra a na palavra 'Seja'.
+
+22. Mas, se nos quisermos o ultimo 'a'? Entao, nos podemos usar
+
+m.lastIndexOf('a');
+
+, que vai retornar 20. se a gente contar aqui, vai dar justamente nesse ultimo
+carinha aqui, ou seja, na letra 'a' na palavra AlgaWorks.
+
+23. Se ele nao encontrar, 
+
+m.indexOf('z');
+
+, ele retorna -1.
+
+24. Entao, com isso, da para nos brincarmos bastante. Como que nos 
+brincamos, Normandes, com isso aqui, 
+
+m.indexOf('z');
+
+? Nao entendi. Voce so coloca isso?
+
+25. Na verdade, isso aqui esta retornando um valor, nos poderiamos colocar
+isso em uma variavel, entao, nos podemos colocar assim, 
+
+var indice = m.indexOf('a')
+
+, por exemplo. Ai, esse indice aqui da o valor 3.
+
+26. Sempre que nos damos um <ENTER> no console do node, que nos nao 
+    atribuimos o valor de uma variavel, ele vai imprimir o 
+    resultado dessa funcao aqui na frente, sempre aqui embaixo.
+
+27. Por isso da undefined quando nos colocamos isso, por exemplo,
+
+var m = 'Seja bem-vindo a AlgaWorks';
+
+, porque nao retorna nada essa expressao.
+
+28. Quando nos colocamos assim, var x = 1; vai aparecer, aqui embaixo,
+undefined, por que? Porque isso aqui tudo, ou seja, a
+declaracao da variavel, nao retorna nada, x recebeu o 1, mas essa
+expressao nao retornou nada, por isso retorna undefined.
+
+29. Entao, indexOf Okay. 
+
+30. Vamos ver o substring(). Entao, se nos tivermos, aqui, 
+
+var s = 'A arte de programar'
+
+, por exemplo, estamos com essa string aqui. Nos queremos pegar um
+pedaco dessa string, entao, nos vamos usar o substring,
+
+> var s = 'A arte de programar'
+
+> s
+
+> s.sub
+
+>s.subst
+
+> s.substring(2, 6)
+
+, se nos pegarmos, aqui, 2, 6, por exemplo, nos vamos pegar essa palavra
+'arte', o 6 seria o espaco, so que ele nao pega ele, entao, esse primeiro
+parametro eh inclusive eh o segundo parametro eh exclusive, entao, ele 
+vai pegar o 'arte' certinho.
+
+31. Ah, Normandes, ele alterou a string s? Nao, a string eh imutavel,
+ele retornou uma nova string. 
+
+32. Nos pdoeriamos fazer isso aqui, 
+
+var novaString = s.susbstring(2, 6);
+
+novaString
+
+, ai, essa novaString eh 'arte' e o 's' continua a string completa, ou seja,
+'A arte de programar', a gente nao altera ela.
+
+33. Se nos omitirmos o segundo parametro, 
+
+s.substring(2)
+
+, ele vai pegar a partir do indice informado como parametro ate o final 
+da string,
+
+'arte de programar'
+
+34. O slice(), tambem tem o slice, tambem server para pegarmos pedacos
+da string, 
+
+s.slice(2, 6)
+
+, por exemplo, vai retornar 'arte' tambem, da posicao 2 ate a posicao 6
+tirando ela.
+
+35. s.slice(2), vai retornar ate o final, ou seja, 'arte de programar'
+
+36. Ah, Normandes, entao, qual que eh a diferenca do substring para o 
+slice?
+
+37. Eh que, com o slice, nos podemos contar ao contrario, ou seja,
+contar de tras para a frente. 
+
+38. Quando que nos iremos usar isso? Pode ser que seja uma regra no nosso 
+codigo, que nos precisemos contar de tras para a frente, entao, eh 
+importante nos sabermos que existe.
+
+39. Entao,
+
+s.slice(-17, -13);
+
+, que retorna 'arte'.
+
+40. Coloca-se, nos parametros, valores negativos para contar de tras
+para frente.
+
+41. Entao, -17 a -13 eh o que ele consegue contar e cortar so esse pedaco
+aqui, 'arte'.
+
+42. Tem tambem esse aqui, s.substr(). Qual que eh a diferenca do
+substr para o substring? Eh bem parecido, so que o segundo parametro
+eh a quantidade de caracteres, e anao a posicao.
+
+43. Entao, nos queremos 4 carecteres, a partir da posicao 2,
+
+s.substr(2, 4);
+
+, entao, vai pegar a palavra 'arte' de novo.
+
+44. Entao, tem coisa demais para brincar, da para fazer quase qualquer
+coisa.
+
+45. O replace(), tem a funcao replace() tambem. Entao, com replace(),
+nos vamos supor que a gente teria uma mensagem assim,
+
+var m = 'Seja bem-vindo <nome>'
+
+, a gente coloca alguma coisa de marcacao assim. Ai, nos queremos substituir
+esse cara, nos queremos substituir <nome> pelo nome do cara que 
+esta aparecendo, 
+
+m.replace('<nome>', 'José');
+
+, por exemplo, que retorna: 'Seja bem-vindo José', ai ele ja consegue 
+substituir ali.
+
+46. Tem, tambem, o toUpperCase() e o toLowerCase(). vamos usar esse
+proprio exemplo aqui, 
+
+m.toUpperCase()
+
+, todo mundo em letra maiuscula.
+
+m.toLowerCase()
+
+, todo mundo passou para minusculo. O 'm', em si, nao mudou, apenas
+o retorno da funcao fica em minusculo.
+
+47. Vamos ver mais duas funcoes aqui, concat(), por exemplo,
+
+var m = 'Olá' + ' ' + 'Ricardo'
+
+, por exemplo, >m retorna 'Olá Ricardo'. Bom, nos tivemos que ir fazendo
+isso aqui, usando '+'. E se nos quisermos usar algum metodo, uma funcao?
+
+48. var m = 'Olá', 'Olá' eh uma string, entao, ela tambem tem a funcao,
+ela tambem tem funcoes, ela tem indexOf, tem todas, e ela tambem
+tem uma funcao concat().
+
+49. E nos podemos ir passando, aqui, as strings que nos queremos
+concatenar,
+
+var m = 'Olá'.concat(' ', 'Ricardo');
+
+, pronto, agora, o >m vai ser 'Olá Ricardo', que fizemos usando a funcao
+concat().
+
+50. Para finalizar, vamos so ver a ultima aqui, o charAt(), por exemplo,
+
+m.charAt(4)
+
+, ou seja, charAt na posicao 4, por exemplo, qual eh o caracter que esta
+nessa posicao? Eh o 'R'.
+
+51. Ou seja, da para fazer muita coisa, quais as outras funcoes que 
+tem, Normandes?
+
+52. Da um m. e da um <TAB>, tem que ser uma variavel, entao, por exemplo,
+m. e da um <TAB>, ai da para nos vermos varias funcoes, da para darmos
+uma pesquisada na Internet,sempre que nos precisarmos fazer alguma
+coisa com string, Ah, eu precisava substituir, encontrar, alguma coisa
+assim, da para nos darmos uma pesquisada, eh bem possivel que esse
+metodo exista, da para nos fazermos alguma coisa com as funcoes que
+ja existem na string, no tipo string ai do Javascript. 
+
+
+
+
+
+
+
+
+
+
+-->

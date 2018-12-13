@@ -1,0 +1,227 @@
+<!-- 
+
+    Aula 02.005. Tipo Boolean
+
+1. Agora, eh a vez do tipo boolean, que eh bem interessante, pois, caso
+tenhamos familiaridade com Java, nos vamos ver alumas diferencas bem
+importantes aqui.
+
+2. Entao, vamos la. Como no criamos uma variavel do tipo boolean?
+
+3. Bom, a forma mais simples, entao, vamos supor que tenhamos
+uma variavel aqui para ativo/inativo, 
+
+> var ativo = true;
+
+> typeof ativo
+
+4. Retorna 'boolean'. Okay, entao, ele eh do tipo ativo. Se nos 
+passarmos 
+
+> ativo = false;
+
+, dessa forma, 
+
+typeof ativo
+
+, o tipo continua sendo boolean. 
+
+5. Mas uma coisa que o instrutor quer nos chamar a atencao aqui, que
+eh diferente de outras linguagens, como o Java, por exemplo, eh o 
+que da false e o que da true, no Javascript.
+
+6. Nos temos que prestar atencao nessa parte, se nos formos familiarizados
+com Java, nos vamos ver umas diferencas aqui que, de repente, quando
+estivermos programando em Javascript, nos nao precisamos converter 
+tipos, nos nao precisamos fazer coisas que, no Java, faria sentido.
+
+7. Entao, devemos prestar atencao nesta parte aqui. Por exemplo, o zero, 
+no Javascript, sao 6 carinhas, vamos comecar pelo zero,
+
+> // 0
+
+, o zero, no Javascript, eh false. O zero, sempre no Javascript, eh
+false. Como eh que nos vamos fazer para descobrir se o zero eh false?
+
+8. Bom, a gente poderia criar uma condicao, do tipo 
+
+if (0) {} 
+
+, nos podemos fazer isso no Javascript. No Java nao, nos nao podemos colocar
+if e colocar um inteiro, no Java, 0 seria um inteiro, nao, nos teriamos que
+colocar uma expressao booleana.
+
+9. No Javascript, nos podemos. Entao, colocamos aqui zero e nos testamos
+e o instrutor esta nosafirmando, o zero eh false, o instrutor so quer nos
+provar que zero eh false.
+
+10. Se 0 for true, ele executaria o que nos colocarmos aqui,
+
+if (0) {
+    console.log('0 é true');
+} else {
+    console.log('0 é false');
+}
+
+11. Como o instrutor esta nos afirmando que 0 eh false, ele vai cair
+no else e vai imprimir essa mensagem: '0 é false'. 
+
+12. Retornou 0 é false.
+
+13. Se 0 fosse true, ele entraria em console.log('0 é true');
+
+14. Bah, Normandes, que chatiche fazer isso aqui, nao tem uma forma
+mais facil?
+
+15. Tem. Tem um truquezinho bem interessante para nos descobrirmos
+quel eh o valor booleano de um tipo, de uma variavel.
+
+16. Entao, nos queremos sabe se 0 eh false, nos queremos saber qual eh
+o valor booleano dessa variavel. Entao, 
+
+>0
+
+, se nos colocarmos,
+
+>!0
+
+, nos estamos negando. Se zero eh false e estamos negando, entao isso aqui
+vai retornar um tipo booleano true. Se nos negarmos de novo, 
+
+> !!0
+
+, ou seja, nos negamos e desnegamos, o que que nos estamos fazendo, 
+colocando esses dois negados? Transoformando em um tipo booleano, colocando
+os dois pontos de excelamacao.
+
+17. vamos colocar aqui so um,
+
+>!0
+
+, se nos negarmos o zero, ele vai nos retornar um tipo booleano, zero eh
+false, entao, esse cara aqui nos retorna true.
+
+18. Se nos colocarmos dois exclamacoes, ou seja, passa true, e, depois,
+nos falamos nao, nos queremos que negue o true, entao, retorna false, ou 
+seja, nos vamos mostra o valor real, o que que o zero representa em 
+booleano,
+
+>!!0
+
+, retorna false. Entao, sempre que nos quisermos saber o que eh o que
+em booleano? Devemos colocar dois pontos de exclamacao na frente.
+
+19. Entao, o instrutor esta nos provando que zero eh false.
+
+20. Esse eh o primeiro caso que nos precisamos decorar.
+
+21. Qual o outro caso interessante que da false? Sabe qual?
+
+22. String vazia, ou seja, '', colocamos duas aspas simples.
+
+23. Vamos colocar dois pontos de exclamacao na frente, para nos vermos
+o valor booleano desse cara, 
+
+> !!''
+
+, da false tambem.
+
+24. Entao, uma string vazia eh false tambem. 
+
+25. O NaN, ele tambem eh false,
+
+>!!NaN
+
+, retorna false. Quem mais? O null, o null tambem eh false,
+
+>!!null
+
+, retorna false. O instrutor vai nos falar mias para a frente sobre 
+o null e sobre o undefined, mais para a frente,
+
+>!!undefined,
+
+retorna false tambem, mas eles ambos sao false, tanto null quanto 
+undefined sao false.
+
+26. E qual que eh o ultimo? 
+
+27. Eh o proprio false,
+
+>!!false
+
+, retorna false, obviamente, tinha que ser false. Entao, sao esses 6
+casos aqui que nos precisamos decorar. 
+
+>!!0
+
+>!!''
+
+>!!NaN
+
+>!!null
+
+>!!undefined
+
+>!!false
+
+28. O false eh simplezinho, o false eh sempre false, o resto aqui, se
+nos lembrarmos esses 5, vai ajudar bastante. Por que que vai nos ajudar?
+
+29. As vezes, nos estamos fazendo algum calculo, la na hora, estamos
+fazendo alguma regra no nosso Javascript, e nos queremos saber se 
+o cara informou alguma coisa, o que que tem nessa string para nos 
+validarmos?
+
+30. Bom, se nos, simplesmente, usarmos la, a string que voltou, se ela
+for vazia, nos podemos usar direto, vamos fazer um exemplo, vamos supor
+que o cara tinha que informar o nome dele,
+
+var nome = '';
+
+, e ele nao informou, ele informou uma string vazia. Entao, nome esta 
+em uma string vazia. E, ai, nos teriamos alguma coisa assim, se ele nao
+informou o nome, console.log('informe o nome');,
+
+> if (!nome) {
+  ...  console.log('informe o nome');
+}
+
+, entao,ele verifica, se o o craa nao informou o nome, conseguimos
+mostrar o log. 
+
+31. Reparemos que nos nao precisamos ficar validando se nome eh === a 
+true, ou != de vazio ou nao, nos podemos usar direto a string, porque,
+se o nome estiver preenchido, por exemplo,
+
+> var nome = 'João';
+> if (!nome) {
+   ... console.log('informe o nome');
+}
+
+, nos vamos ver qe isso nao vai aparecer. Se nos colocarmos um else aqui,
+console.log('Obrigado'), so para mostrar uma mensagem aqui na tela,
+
+> var nome = 'João';
+> if (!nome) {
+   ... console.log('informe o nome');
+} else {
+   ... console.log('Obrigado!');
+}
+
+, nos vamos ver que vai aparecer o Obrigado!, por que? Porque o nome, que
+eh uma string com alguma coisa, eh true.
+
+32. Okay? Entao, devemos lembrar daqueles casos, o resto todo eh true.
+Entao, uma string com algum dado eh true, o numero maior que zero,
+eh true, -1 eh true, 
+
+>!!-1
+
+, retorna true. Entao, sao so aqueles casos que nos precisamos lembrar.
+O resto sempre eh true. Devemos nos lembrar disso.
+
+33. Fim da Aula 02.005. Tipo Boolean.
+
+
+-->
